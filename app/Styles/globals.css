@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* :root {
+  --color-primary: #1DA1F2;
+  --color-secondary: #14171A;
+  --spacing-large: 32rem;
+} */
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
