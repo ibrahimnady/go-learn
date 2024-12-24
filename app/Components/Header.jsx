@@ -45,7 +45,7 @@ function Header({ setmyMode, drawerWidth, ShowSidebar }) {
                                 aria-haspopup="true"
                                 aria-expanded={openAV ? 'true' : undefined}
                             >
-sd
+
                                 <Typography mr={2} variant="body1" ><ArrowDropDownIcon/> Ibrahim Nady</Typography>
                                 <Avatar sx={{ width: 32, height: 32 }} src="https://mui.com/static/images/avatar/1.jpg" />
                             </IconButton>
