@@ -1,9 +1,8 @@
+'use client';
 import React from 'react'
 import { Divider, Drawer, ListItem, ListItemButton, ListItemIcon, ListItemText, Toolbar, useTheme } from '@mui/material'
 import InboxIcon from '@mui/icons-material/Inbox';
 import Link from 'next/link';
-
-
 import { usePathname } from 'next/navigation';
 
 function SideBar({ drawerWidth, DisplaySidebar, TypeSidebar, HideSidebar }) {
