@@ -36,26 +36,35 @@ function Header({ setmyMode, drawerWidth, ShowSidebar, setLoggin, loggin }) {
     return (
         <div>
             <AppBar
-                sx={{ 
+                sx={{
                     // width: { sm: `calc(100% - ${drawerWidth}px)` }, mr: { xs: 0, sm: `${drawerWidth}px` }
-                 }}
+                }}
                 position="static" >
                 <Toolbar>
                     <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center', flexGrow: 1 }}>
                         <Tooltip title="Account settings" >
-                            
-                            <IconButton
-                                onClick={handleClick}
-                                size="small"
-                                sx={{ ml: 2 }}
-                                aria-controls={openAV ? 'account-menu' : undefined}
-                                aria-haspopup="true"
-                                aria-expanded={openAV ? 'true' : undefined}
-                            >
 
-                                <Typography mr={2} variant="body1" ><ArrowDropDownIcon /> Ibrahim Nady</Typography>
-                                <Avatar sx={{ width: 32, height: 32 }} src="https://mui.com/static/images/avatar/1.jpg" />
-                            </IconButton>
+                            {loggin ? (
+                                <IconButton
+                                    onClick={handleClick}
+                                    size="small"
+                                    sx={{ ml: 2 }}
+                                    aria-controls={openAV ? 'account-menu' : undefined}
+                                    aria-haspopup="true"
+                                    aria-expanded={openAV ? 'true' : undefined}
+                                >
+                                    <Typography mr={2} variant="body1" ><ArrowDropDownIcon /> Ibrahim Nady</Typography>
+                                    <Avatar sx={{ width: 32, height: 32 }} src="https://mui.com/static/images/avatar/1.jpg" />
+                                </IconButton>
+                            ) : (
+                                <Link href="/Login">
+                                    <Button color="inherit">Sign In</Button>
+                                </Link>
+                            )
+
+                            }
+
+
                             <Button onClick={() => {
                                 localStorage.setItem("currentMode", theme.palette.mode === "dark" ? "light" : "dark"),
                                     setmyMode(theme.palette.mode === "light" ? "dark" : "light")
@@ -154,14 +163,13 @@ function Header({ setmyMode, drawerWidth, ShowSidebar, setLoggin, loggin }) {
                             <Divider />
                         </Link>
                     </Menu>
-
                     <IconButton
                         onClick={() => { ShowSidebar() }}
                         size="large"
                         edge="start"
                         color="inherit"
                         aria-label="menu"
-                        sx={{ ml: 2, display: loggin ? 'block' : 'none'   }}
+                        sx={{ ml: 2, display: loggin ? 'block' : 'none' }}
                     >
                         <MenuIcon />
                     </IconButton>
