@@ -38,8 +38,12 @@ function Header({ setmyMode, drawerWidth, ShowSidebar, setLoggin, loggin }) {
             <AppBar
                 sx={{
                     // width: { sm: `calc(100% - ${drawerWidth}px)` }, mr: { xs: 0, sm: `${drawerWidth}px` }
+                    position: "fixed",
+                    zIndex: (theme) => theme.zIndex.drawer + 1,
                 }}
-                position="static" >
+                position="static" 
+                
+                >
                 <Toolbar>
                     <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center', flexGrow: 1 }}>
                         <Tooltip title="Account settings" >

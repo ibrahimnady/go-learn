@@ -13,6 +13,9 @@ const ThemeMode = (mode) => ({
                 },
                 bgClickSidebar: {
                     main: grey[400]
+                },
+                bgCardSubjects: {
+                    main: "#b2e7a5"
                 }
             }
             : {
@@ -20,10 +23,13 @@ const ThemeMode = (mode) => ({
                     main: "#e1f5fe"
                 },
                 background: {
-                    main: "#212121"
+                    main: "#212121",
                 },
                 bgClickSidebar: {
                     main: grey[800]
+                },
+                bgCardSubjects: {
+                    main: "#009f5d"
                 }
 
             }),

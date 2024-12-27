@@ -9,9 +9,9 @@ function SideBar({ drawerWidth, DisplaySidebar, TypeSidebar, HideSidebar }) {
     const theme = useTheme();
     const location = usePathname();
     const myList = [
-        { text: "الرئسية", icon: <InboxIcon/>, path: "/" },
-        { text: "Create", icon: <InboxIcon />, path: "/Courses" },
-        { text: "Profiile", icon: <InboxIcon />, path: "/Intro" },
+        { text: "الرئسية", icon: <InboxIcon />, path: "/Subjects" },
+        // { text: "Subjects", icon: <InboxIcon />, path: "/Intro" },
+        // { text: "Profiile", icon: <InboxIcon />, path: "/Intro" },
         // { text: "Settings", icon: <InboxIcon />, path: "/" },
     ]
 
