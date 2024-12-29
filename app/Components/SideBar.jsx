@@ -26,6 +26,8 @@ function SideBar({ drawerWidth, DisplaySidebar, TypeSidebar, HideSidebar }) {
                         width: drawerWidth,
                         boxSizing: "border-box"
                     },
+                    position: "fixed",
+                    zIndex: (theme) => theme.zIndex.drawer + 5,
                 }}
                 variant={TypeSidebar}
                 anchor="right"
@@ -34,7 +36,7 @@ function SideBar({ drawerWidth, DisplaySidebar, TypeSidebar, HideSidebar }) {
                     HideSidebar()
                 }}
             >
-                <Toolbar  sx={{display: "inline-grid" , textAlign: "center", fontSize: 25 }}>Go Learn </Toolbar>
+                <Toolbar  sx={{display: "inline-grid" , textAlign: "center", fontSize: 25,  }}>Go Learn </Toolbar>
                 <Divider />
                 {
                     myList.map((item) => {

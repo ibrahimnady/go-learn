@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
   const [TypeSidebar, setTypeSidebar] = useState("permanent");
   const [loggin, setLoggin] = useState(true);
   const theme = useMemo(() => createTheme(ThemeMode(mode)), [mode]);
-  
+
   const ShowSidebar = () => {
     setTypeSidebar("temporary")
     setDisplaySidebar("block")
@@ -38,11 +38,13 @@ export default function RootLayout({ children }) {
       <body>
         <ThemeProvider theme={theme}>
           <CssBaseline />
-          <Header setmyMode={setmyMode}
+          <Header
+            setmyMode={setmyMode}
             drawerWidth={drawerWidth}
             ShowSidebar={ShowSidebar}
             setLoggin={setLoggin}
             loggin={loggin}
+            DisplaySidebar={DisplaySidebar}
           />
 
           {
@@ -60,16 +62,23 @@ export default function RootLayout({ children }) {
                     mr: { sm: `${drawerWidth}px` },
                     display: 'flex',
                     justifyContent: 'center',
-                  }} className="page-content">
+                  }} >
                   {children}
                 </Box>
                 <Footer />
               </div>
               :
               <div>
-                 {/* <Intro/> */}
+                {/* <Intro/> */}
                 {/* <Footer />  */}
-                {children}
+                <Box
+                  sx={{
+                    mr: { sm: `${drawerWidth}px` },
+                    display: 'flex',
+                    justifyContent: 'center',
+                  }} className="page-content">
+                  {children}
+                </Box>
                 {/* <Login/> */}
               </div>
           }

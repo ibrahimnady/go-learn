@@ -12,7 +12,7 @@ import { Logout, Settings } from '@mui/icons-material';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 
-function Header({ setmyMode, drawerWidth, ShowSidebar, setLoggin, loggin }) {
+function Header({ setmyMode, drawerWidth, ShowSidebar, setLoggin, loggin, DisplaySidebar }) {
     const theme = useTheme();
     const [anchorEl, setAnchorEl] = React.useState(null);
     const openAV = Boolean(anchorEl);
@@ -37,13 +37,13 @@ function Header({ setmyMode, drawerWidth, ShowSidebar, setLoggin, loggin }) {
         <div>
             <AppBar
                 sx={{
-                    // width: { sm: `calc(100% - ${drawerWidth}px)` }, mr: { xs: 0, sm: `${drawerWidth}px` }
+                    // width: { sm: `calc(100% - ${drawerWidth}px)` }, mr: { xs: 0, sm: `${drawerWidth}px` },
                     position: "fixed",
                     zIndex: (theme) => theme.zIndex.drawer + 1,
                 }}
-                position="static" 
-                
-                >
+                position="static"
+
+            >
                 <Toolbar>
                     <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center', flexGrow: 1 }}>
                         <Tooltip title="Account settings" >
@@ -141,7 +141,7 @@ function Header({ setmyMode, drawerWidth, ShowSidebar, setLoggin, loggin }) {
                                     </Link>
                                 )
                             })}
-                        <Link href="/">
+                        <Link href="/Intro">
                             <ListItem disablePadding>
                                 <ListItemButton
                                     onClick={() => {
@@ -167,13 +167,16 @@ function Header({ setmyMode, drawerWidth, ShowSidebar, setLoggin, loggin }) {
                             <Divider />
                         </Link>
                     </Menu>
+
                     <IconButton
+                        sx={{
+                            ml: 2, display: loggin ? { xs: 'block', sm: DisplaySidebar } : { xs: 'none', sm: 'none' }
+                        }}
                         onClick={() => { ShowSidebar() }}
                         size="large"
                         edge="start"
                         color="inherit"
                         aria-label="menu"
-                        sx={{ ml: 2, display: loggin ? 'block' : 'none' }}
                     >
                         <MenuIcon />
                     </IconButton>
