@@ -1,6 +1,7 @@
 'use client'
 import React from 'react';
 import { Grid, Card, CardContent, Typography, CardMedia, Rating, Button, useTheme } from '@mui/material';
+import Link from 'next/link';
 
 const teachers = [
     // يمكنك إضافة المزيد من المدرسين هنا
@@ -91,17 +92,19 @@ const Teachers = () => {
                                     <Button variant="contained" color="primary" style={{ marginBottom: '10px' }}>
                                         اشترك الآن
                                     </Button>
-                                    <Button variant="outlined" color="secondary">
-                                        رؤية المحتوى
-                                    </Button>
+                                    <Link href="/Contant">
+                                        <Button variant="outlined" color="secondary">
+                                            رؤية المحتوى
+                                        </Button>
+                                    </Link>
                                 </Grid>
                                 <Grid item xs={8} sx={{ textAlign: 'right' }}>
                                     <Typography variant="h4" component="div">
                                         {teacher.name}
                                     </Typography>
-                                    <Typography  variant="body2" color="text.secondary">
-                                        {teacher.price}  :  سعر الكورس 
-                                        
+                                    <Typography variant="body2" color="text.secondary">
+                                        {teacher.price}  :  سعر الكورس
+
                                     </Typography>
                                     <Typography variant="body2" color="text.secondary">
                                         عدد المحاضرات: {teacher.lectures}

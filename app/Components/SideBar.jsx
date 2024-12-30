@@ -36,7 +36,11 @@ function SideBar({ drawerWidth, DisplaySidebar, TypeSidebar, HideSidebar }) {
                     HideSidebar()
                 }}
             >
-                <Toolbar  sx={{display: "inline-grid" , textAlign: "center", fontSize: 25,  }}>Go Learn </Toolbar>
+                <Toolbar sx={{ display: "inline-grid", textAlign: "center", fontSize: 25, }}>
+                    <Link href="/">
+                        Go Learn
+                    </Link>
+                </Toolbar>
                 <Divider />
                 {
                     myList.map((item) => {
@@ -51,19 +55,19 @@ function SideBar({ drawerWidth, DisplaySidebar, TypeSidebar, HideSidebar }) {
                                     }}
                                     disablePadding
                                 >
-                                    <ListItemButton 
+                                    <ListItemButton
                                         sx={{
                                             textAlign: "right"
                                         }}
                                     >
-                                        
-                                        <ListItemText 
+
+                                        <ListItemText
                                             sx={{
                                                 mr: 2
                                             }}
-                                        primary={item.text} />
-                                        <ListItemIcon 
-                                            
+                                            primary={item.text} />
+                                        <ListItemIcon
+
                                             sx={{ minWidth: 0 }}
                                         >
                                             {item.icon}
