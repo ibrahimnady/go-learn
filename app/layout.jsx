@@ -31,7 +31,7 @@ export default function RootLayout({ children }) {
   }
 
   return (
-    <html lang="en">
+    <html lang="ar">
       <head>
         <title>Go Learn</title>
       </head>
@@ -46,7 +46,6 @@ export default function RootLayout({ children }) {
             loggin={loggin}
             DisplaySidebar={DisplaySidebar}
           />
-
           {
             loggin === true
               ?
