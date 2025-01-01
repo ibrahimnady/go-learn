@@ -27,10 +27,16 @@ const subjects = [
     { name: "جغرافيا", icon: <GeographyIcon /> },
 ];
 
+
+
 const Subjects = () => {
     const theme = useTheme();
     return (
+        
         <div>
+            <head>
+                <title>Go Learn | Subjects</title>
+            </head>
             {/* <Typography sx={{ marginTop: '80px',textAlign: "center"}} variant="h1" color="">test</Typography> */}
             <Grid container spacing={2} justifyContent="center" alignItems="center"
                 sx={{ marginTop: '80px', }}>

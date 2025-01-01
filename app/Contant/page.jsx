@@ -224,6 +224,9 @@ const Contant = () => {
 
     return (
         <div style={{ width: '100%', marginTop: '65px' }}>
+            <head>
+                <title>Go Learn | Contant</title>
+            </head>
             {sections.map((section, index) => (
                 <Accordion key={index} disabled={section.status} expanded={expanded === `panel${index + 1}`}
                     onChange={handleChange(`panel${index + 1}`)}>

@@ -22,7 +22,7 @@ function Header({ setmyMode, drawerWidth, ShowSidebar, setLoggin, loggin, Displa
     const handleClose = () => {
         setAnchorEl(null);
     };
-    const test = () => {
+    const logOut = () => {
         setLoggin(false)
         console.log("test")
     }
@@ -141,11 +141,11 @@ function Header({ setmyMode, drawerWidth, ShowSidebar, setLoggin, loggin, Displa
                                     </Link>
                                 )
                             })}
-                        <Link href="/Intro">
+                        <Link href="">
                             <ListItem disablePadding>
                                 <ListItemButton
                                     onClick={() => {
-                                        test()
+                                        logOut()
                                     }}
                                     sx={{
                                         textAlign: "right"

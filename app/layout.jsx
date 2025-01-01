@@ -14,6 +14,8 @@ import Intro from './Intro/page';
 
 const drawerWidth = 240;
 
+
+
 export default function RootLayout({ children }) {
   const [mode, setmyMode] = useState(localStorage.getItem("currentMode") === null ? "light" : localStorage.getItem("currentMode") === "light" ? "light" : "dark");
   const [DisplaySidebar, setDisplaySidebar] = useState("none");
@@ -64,7 +66,7 @@ export default function RootLayout({ children }) {
                   }} >
                   {children}
                 </Box>
-                <Footer />
+                {/* <Footer /> */}
               </div>
               :
               <div>
@@ -72,12 +74,13 @@ export default function RootLayout({ children }) {
                 {/* <Footer />  */}
                 <Box
                   sx={{
-                    mr: { sm: `${drawerWidth}px` },
+                    // mr: { sm: `${drawerWidth}px` },
                     display: 'flex',
                     justifyContent: 'center',
                   }} className="page-content">
                   {children}
                 </Box>
+                {/* <Footer /> */}
                 {/* <Login/> */}
               </div>
           }

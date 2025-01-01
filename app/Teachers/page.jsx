@@ -66,57 +66,62 @@ const teachers = [
 const Teachers = () => {
     const theme = useTheme();
     return (
-        <Grid container spacing={2} style={{ padding: '20px', marginTop: '50px' }}>
-            {teachers.map((teacher, index) => (
-                <Grid item xs={12} sm={12} md={6} lg={3} key={index}>
-                    <Card sx={{
-                        transition: 'transform 0.3s, box-shadow 0.3s',
-                        transition: '0.5s',
-                        '&:hover': {
-                            transform: 'scale(1.05)',
-                            boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.3)',
-                            // backgroundColor: theme.palette.bgCardSubjects.main,
-                            // backgroundColor: "#ffff",
-                        }
-                    }}>
-                        <CardMedia
-                            component="img"
-                            height="140"
-                            image={teacher.image}
-                            alt={teacher.name}
-                            sx={{ borderTopLeftRadius: '16px', borderTopRightRadius: '16px' }}
-                        />
-                        <CardContent>
-                            <Grid container spacing={2}>
-                                <Grid item xs={4} container direction="column" justifyContent="center">
-                                    <Button variant="contained" color="primary" style={{ marginBottom: '10px' }}>
-                                        اشترك الآن
-                                    </Button>
-                                    <Link href="/Contant">
-                                        <Button variant="outlined" color="secondary">
-                                            رؤية المحتوى
+        <div>
+            <head>
+                <title>Go Learn | Teachers</title>
+            </head>
+            <Grid container spacing={2} style={{ padding: '20px', marginTop: '50px' }}>
+                {teachers.map((teacher, index) => (
+                    <Grid item xs={12} sm={12} md={6} lg={3} key={index}>
+                        <Card sx={{
+                            transition: 'transform 0.3s, box-shadow 0.3s',
+                            transition: '0.5s',
+                            '&:hover': {
+                                transform: 'scale(1.05)',
+                                boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.3)',
+                                // backgroundColor: theme.palette.bgCardSubjects.main,
+                                // backgroundColor: "#ffff",
+                            }
+                        }}>
+                            <CardMedia
+                                component="img"
+                                height="140"
+                                image={teacher.image}
+                                alt={teacher.name}
+                                sx={{ borderTopLeftRadius: '16px', borderTopRightRadius: '16px' }}
+                            />
+                            <CardContent>
+                                <Grid container spacing={2}>
+                                    <Grid item xs={4} container direction="column" justifyContent="center">
+                                        <Button variant="contained" color="primary" style={{ marginBottom: '10px' }}>
+                                            اشترك الآن
                                         </Button>
-                                    </Link>
-                                </Grid>
-                                <Grid item xs={8} sx={{ textAlign: 'right' }}>
-                                    <Typography variant="h4" component="div">
-                                        {teacher.name}
-                                    </Typography>
-                                    <Typography variant="body2" color="text.secondary">
-                                        {teacher.price}  :  سعر الكورس
+                                        <Link href="/Contant">
+                                            <Button variant="outlined" color="secondary">
+                                                رؤية المحتوى
+                                            </Button>
+                                        </Link>
+                                    </Grid>
+                                    <Grid item xs={8} sx={{ textAlign: 'right' }}>
+                                        <Typography variant="h4" component="div">
+                                            {teacher.name}
+                                        </Typography>
+                                        <Typography variant="body2" color="text.secondary">
+                                            {teacher.price}  :  سعر الكورس
 
-                                    </Typography>
-                                    <Typography variant="body2" color="text.secondary">
-                                        عدد المحاضرات: {teacher.lectures}
-                                    </Typography>
-                                    <Rating name="read-only" value={teacher.rating} readOnly />
+                                        </Typography>
+                                        <Typography variant="body2" color="text.secondary">
+                                            عدد المحاضرات: {teacher.lectures}
+                                        </Typography>
+                                        <Rating name="read-only" value={teacher.rating} readOnly />
+                                    </Grid>
                                 </Grid>
-                            </Grid>
-                        </CardContent>
-                    </Card>
-                </Grid>
-            ))}
-        </Grid>
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                ))}
+            </Grid>
+        </div>
     );
 };
 
