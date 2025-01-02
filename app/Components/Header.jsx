@@ -22,11 +22,16 @@ function Header({ setmyMode, drawerWidth, ShowSidebar, setLoggin, loggin, Displa
     const handleClose = () => {
         setAnchorEl(null);
     };
+
     const logOut = () => {
+        localStorage.removeItem("isLoggedIn");
         setLoggin(false)
         console.log("test")
     }
-
+    const handleLogin = () => {
+        localStorage.setItem("isLoggedIn", "true"); // حفظ الحالة في localStorage
+        setLoggin(true); // تحديث الحالة في الكومبوننت
+    };
     const myList = [
         { text: "الصفحة الشخصية", icon: <AccountCircleIcon />, path: "/" },
         { text: "الاعدادات", icon: <Settings />, path: "/" },
@@ -62,7 +67,7 @@ function Header({ setmyMode, drawerWidth, ShowSidebar, setLoggin, loggin, Displa
                                 </IconButton>
                             ) : (
                                 <Link href="/Login">
-                                    <Button color="inherit">Sign In</Button>
+                                        <Button color="inherit" onClick={handleLogin}>Sign In</Button>
                                 </Link>
                             )
 
