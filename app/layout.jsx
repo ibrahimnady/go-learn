@@ -7,10 +7,11 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import { useState } from "react";
 import Header from "./Components/Header";
-import { Box } from '@mui/material';
+import { Box} from '@mui/material';
 import ThemeMode from './MyTheme';
 import Login from './Login/page';
 import Intro from './Intro/page';
+import Grid from '@mui/material/Grid2';
 
 const drawerWidth = 240;
 
@@ -47,6 +48,7 @@ export default function RootLayout({ children }) {
             setLoggin={setLoggin}
             loggin={loggin}
             DisplaySidebar={DisplaySidebar}
+           
           />
           {
             loggin === true
@@ -76,10 +78,13 @@ export default function RootLayout({ children }) {
                   sx={{
                     // mr: { sm: `${drawerWidth}px` },
                     display: 'flex',
-                    justifyContent: 'center',
-                  }} className="page-content">
+                    // justifyContent: 'center',
+                    
+                    
+                  }}>
                   {children}
                 </Box>
+                
                 {/* <Footer /> */}
                 {/* <Login/> */}
               </div>

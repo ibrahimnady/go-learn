@@ -21,7 +21,8 @@
     "react-bootstrap": "^2.10.5",
     "react-dom": "^18",
     "react-redux": "^9.2.0",
-    "styled-components": "^6.1.13"
+    "styled-components": "^6.1.13",
+    "swiper": "^11.2.0"
   },
   "devDependencies": {
     "eslint": "^8",
