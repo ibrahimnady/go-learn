@@ -7,7 +7,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import { useState } from "react";
 import Header from "./Components/Header";
-import { Box} from '@mui/material';
+import { Box } from '@mui/material';
 import ThemeMode from './MyTheme';
 import Login from './Login/page';
 import Intro from './Intro/page';
@@ -48,7 +48,7 @@ export default function RootLayout({ children }) {
             setLoggin={setLoggin}
             loggin={loggin}
             DisplaySidebar={DisplaySidebar}
-           
+
           />
           {
             loggin === true
@@ -71,21 +71,24 @@ export default function RootLayout({ children }) {
                 {/* <Footer /> */}
               </div>
               :
-              <div>
+              <div className="main-content">
                 {/* <Intro/> */}
                 {/* <Footer />  */}
                 <Box
                   sx={{
                     // mr: { sm: `${drawerWidth}px` },
-                    display: 'flex',
-                    // justifyContent: 'center',
+                    // display: 'flex',
+                    marginBottom: 5
                     
-                    
+
+
                   }}>
                   {children}
                 </Box>
-                
-                {/* <Footer /> */}
+                <div className="footer-container">
+
+                  <Footer />
+                </div>
                 {/* <Login/> */}
               </div>
           }
