@@ -6,9 +6,45 @@
   --color-primary: #1DA1F2;
   --color-secondary: #14171A;
   --spacing-large: 32rem;
-} */
+  } */
 
 body {
   margin: 0;
   font-family: Arial, sans-serif;
+}
+.container-slider {
+  width: 95vw;
+
+  margin: 0 auto;
+}
+
+.swiper_container {
+  height: 52rem;
+  padding: 2rem 0;
+}
+
+.heading {
+  margin-top: 60px;
+  margin-bottom: 30px;
+  font-size: 3.5rem;
+  text-align: center;
+
+}
+.swiper-slide {
+  width: 100%;
+  height: 100%;
+}
+.swiper-slide img {
+  width: 37rem;
+  height: 42rem;
+  border-radius: 2rem;
+  object-fit: cover;
+}
+@media (max-width: 900px) {
+  .container-slider {
+    width: 400px;
+  }
+  .swiper-slide {
+    width: 100%;
+  }
 }
