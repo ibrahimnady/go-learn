@@ -1,8 +1,8 @@
 'use client'
 import React, { useState } from 'react';
-import { Container, TextField, Button, Typography, Box, Grid, Autocomplete } from '@mui/material';
+import { Container, TextField, Button, Typography, Box, Autocomplete } from '@mui/material';
 import Link from 'next/link';
-
+import Grid from '@mui/material/Grid2';
 function Register() {
     const [name, setName] = useState('');
     const [governorate, setGovernorate] = useState('');
@@ -42,7 +42,7 @@ function Register() {
                     </Typography>
                     <Box component="form" noValidate sx={{ mt: 1 }}>
                         <Grid container spacing={2}>
-                            <Grid item xs={12} sm={6}>
+                            <Grid item size={{ xs: 12, sm: 6 }}>
                                 <TextField
                                     margin="normal"
                                     required
@@ -52,7 +52,7 @@ function Register() {
                                     onChange={(e) => setName(e.target.value)}
                                 />
                             </Grid>
-                            <Grid item xs={12} sm={6}>
+                            <Grid item size={{ xs: 12, sm: 6 }}>
                                 <Autocomplete
                                     options={governorates}
                                     renderInput={(params) => (
@@ -62,7 +62,7 @@ function Register() {
                                     onChange={(event, newValue) => setGovernorate(newValue)}
                                 />
                             </Grid>
-                            <Grid item xs={12} sm={6}>
+                            <Grid item size={{ xs: 12, sm: 6 }}>
                                 <TextField
                                     margin="normal"
                                     required
@@ -72,7 +72,7 @@ function Register() {
                                     onChange={(e) => setAddress(e.target.value)}
                                 />
                             </Grid>
-                            <Grid item xs={12} sm={6}>
+                            <Grid item size={{ xs: 12, sm: 6 }}>
                                 <TextField
                                     margin="normal"
                                     required
@@ -82,7 +82,7 @@ function Register() {
                                     onChange={(e) => setMobile(e.target.value)}
                                 />
                             </Grid>
-                            <Grid item xs={12} sm={6}>
+                            <Grid item size={{ xs: 12, sm: 6 }}>
                                 <TextField
                                     margin="normal"
                                     required
@@ -92,7 +92,7 @@ function Register() {
                                     onChange={(e) => setEmail(e.target.value)}
                                 />
                             </Grid>
-                            <Grid item xs={12} sm={6}>
+                            <Grid item size={{ xs: 12, sm: 6 }}>
                                 <TextField
                                     margin="normal"
                                     required
@@ -103,7 +103,7 @@ function Register() {
                                     onChange={(e) => setPassword(e.target.value)}
                                 />
                             </Grid>
-                            <Grid item xs={12} sm={6}>
+                            <Grid item size={{ xs: 12, sm: 6 }}>
                                 <TextField
                                     margin="normal"
                                     required
@@ -114,7 +114,7 @@ function Register() {
                                     onChange={(e) => setAge(e.target.value)}
                                 />
                             </Grid>
-                            <Grid item xs={12} sm={6}>
+                            <Grid item size={{ xs: 12, sm: 6 }}>
                                 <TextField
                                     margin="normal"
                                     required
@@ -124,7 +124,7 @@ function Register() {
                                     onChange={(e) => setGuardianNumber(e.target.value)}
                                 />
                             </Grid>
-                            <Grid item xs={12} sm={6}>
+                            <Grid item size={{ xs: 12, sm: 6 }}>
                                 <TextField
                                     margin="normal"
                                     required
@@ -134,7 +134,7 @@ function Register() {
                                     onChange={(e) => setSchoolName(e.target.value)}
                                 />
                             </Grid>
-                            <Grid item xs={12} sm={6}>
+                            <Grid item size={{ xs: 12, sm: 6 }}>
                                 <Autocomplete
                                     options={educationTypes}
                                     renderInput={(params) => (
@@ -147,7 +147,7 @@ function Register() {
                                     }}
                                 />
                             </Grid>
-                            <Grid item xs={12} sm={6}>
+                            <Grid item size={{ xs: 12, sm: 6 }}>
                                 <Autocomplete
                                     options={academicYears}
                                     renderInput={(params) => (
@@ -157,7 +157,7 @@ function Register() {
                                     onChange={(event, newValue) => setAcademicYear(newValue)}
                                 />
                             </Grid>
-                            <Grid item xs={12} sm={6}>
+                            <Grid item size={{ xs: 12, sm: 6 }}>
                                 <Autocomplete
                                     options={educationType === 'الأزهر' && academicYear.includes('ثانوي') ? azharSections :
                                         educationType === 'تربية وتعليم' && academicYear.includes('ثانوي') ? educationSections : []}

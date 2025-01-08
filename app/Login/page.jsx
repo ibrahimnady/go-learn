@@ -1,7 +1,7 @@
 import React from 'react';
-import { Container, TextField, Button, Typography, Box, Grid } from '@mui/material';
+import { Container, TextField, Button, Typography, Box } from '@mui/material';
 import Link from 'next/link';
-
+import Grid from '@mui/material/Grid2';
 function Login() {
   
   return (
@@ -52,15 +52,15 @@ function Login() {
                 تسجيل الدخول
               </Button>
             </Link>
-            <Grid container>
-              <Grid item xs>
+            <Grid container spacing={4} justifyContent='center'>
+              <Grid item size={{ xs: 6 }}>
 
                 <Button href="#" variant="text">
                   هل نسيت كلمة المرور؟
                 </Button>
 
               </Grid>
-              <Grid item>
+              <Grid item size={{ xs: 6 }}>
                 <Link href="/Register">
                   <Button href="#" variant="text">
                     لا تمتلك حساب؟ تسجيل

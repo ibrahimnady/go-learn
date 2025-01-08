@@ -1,7 +1,7 @@
 'use client';
 import React, { useState } from 'react';
-import { Container, Typography, Box, TextField, Button, Grid } from '@mui/material';
-
+import { Container, Typography, Box, TextField, Button } from '@mui/material';
+import Grid from '@mui/material/Grid2';
 const ExamPage = () => {
     const [answers, setAnswers] = useState({
         question1: '',
@@ -34,7 +34,7 @@ const ExamPage = () => {
                 </Typography>
                 <Box component="form" onSubmit={handleSubmit} sx={{ mt: 2, textAlign: 'right' }}>
                     <Grid container spacing={2}>
-                        <Grid item xs={12}>
+                        <Grid item size={{ xs: 12 }}>
                             <Typography variant="h6">السؤال 1: ما هو مفهوم البرمجة؟</Typography>
                             <TextField
                                 fullWidth
@@ -45,7 +45,7 @@ const ExamPage = () => {
                                 placeholder="أدخل إجابتك هنا"
                             />
                         </Grid>
-                        <Grid item xs={12}>
+                        <Grid item size={{ xs: 12 }}>
                             <Typography variant="h6">السؤال 2: اذكر بعض لغات البرمجة.</Typography>
                             <TextField
                                 fullWidth
@@ -56,7 +56,7 @@ const ExamPage = () => {
                                 placeholder="أدخل إجابتك هنا"
                             />
                         </Grid>
-                        <Grid item xs={12}>
+                        <Grid item size={{ xs: 12 }}>
                             <Typography variant="h6">السؤال 3: ما هو الفرق بين البرمجة الكائنية والبرمجة الإجرائية؟</Typography>
                             <TextField
                                 fullWidth
@@ -67,7 +67,7 @@ const ExamPage = () => {
                                 placeholder="أدخل إجابتك هنا"
                             />
                         </Grid>
-                        <Grid item xs={12}>
+                        <Grid item size={{ xs: 12 }}>
                             <Button type="submit" variant="contained" color="primary">
                                 إرسال الإجابات
                             </Button>

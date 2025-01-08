@@ -1,8 +1,8 @@
 'use client'
 import React from 'react';
-import { Grid, Card, CardContent, Typography, CardMedia, Rating, Button, useTheme } from '@mui/material';
+import { Card, CardContent, Typography, CardMedia, Rating, Button, useTheme } from '@mui/material';
 import Link from 'next/link';
-
+import Grid from '@mui/material/Grid2';
 const teachers = [
     // يمكنك إضافة المزيد من المدرسين هنا
     {
@@ -72,7 +72,7 @@ const Teachers = () => {
             </head>
             <Grid container spacing={2} style={{ padding: '20px', marginTop: '50px' }}>
                 {teachers.map((teacher, index) => (
-                    <Grid item xs={12} sm={12} md={6} lg={3} key={index}>
+                    <Grid item size={{ xs: 12, sm: 12, md: 6, lg: 3 }} key={index}>
                         <Card sx={{
                             transition: 'transform 0.3s, box-shadow 0.3s',
                             transition: '0.5s',

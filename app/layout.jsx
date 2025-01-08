@@ -72,14 +72,13 @@ export default function RootLayout({ children }) {
               </div>
               :
               <div className="main-content">
-                {/* <Intro/> */}
                 {/* <Footer />  */}
                 <Box
                   sx={{
                     // mr: { sm: `${drawerWidth}px` },
                     // display: 'flex',
                     marginBottom: 5
-                    
+
 
 
                   }}>

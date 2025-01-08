@@ -11,7 +11,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import 'swiper/css/effect-coverflow';
 import Grid from '@mui/material/Grid2';
-import Image from 'next/image';
+
 
 
 

@@ -1,6 +1,6 @@
 'use client'
 import React from 'react';
-import { Grid, Card, CardContent, Typography, Box, useTheme } from '@mui/material';
+import { Card, CardContent, Typography, Box, useTheme } from '@mui/material';
 import BiotechIcon from '@mui/icons-material/Biotech'; // أيقونة الفيزياء
 import ScienceIcon from '@mui/icons-material/Science'; // أيقونة الكيمياء
 import Diversity2Icon from '@mui/icons-material/Diversity2'; // أيقونة الأحياء
@@ -12,7 +12,7 @@ import AlgebraIcon from '@mui/icons-material/Functions'; // أيقونة الج�
 import HistoryIcon from '@mui/icons-material/History'; // أيقونة التاريخ
 import GeographyIcon from '@mui/icons-material/Map'; // أيقونة الجغرافيا
 import Link from 'next/link';
-
+import Grid from '@mui/material/Grid2';
 
 const subjects = [
     { name: "فيزياء", icon: <BiotechIcon /> },
@@ -32,7 +32,7 @@ const subjects = [
 const Subjects = () => {
     const theme = useTheme();
     return (
-        
+
         <div>
             <head>
                 <title>Go Learn | Subjects</title>
@@ -41,7 +41,7 @@ const Subjects = () => {
             <Grid container spacing={2} justifyContent="center" alignItems="center"
                 sx={{ marginTop: '80px', }}>
                 {subjects.map((subject, index) => (
-                    <Grid item xs={12} sm={6} md={6} lg={3} key={index}>
+                    <Grid item size={{ xs: 12, sm: 6, md: 6, lg: 3 }} key={index}>
                         <Link href="/Teachers">
                             <Card
                                 sx={{
@@ -57,7 +57,7 @@ const Subjects = () => {
                                         transform: 'scale(1.05)',
                                         boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.3)',
                                         // backgroundColor: "#ffff",
-                                        
+
                                     }
                                 }}
                             >

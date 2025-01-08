@@ -1,13 +1,15 @@
 import React from 'react';
-import { Box, Typography, IconButton, Link as MuiLink, Grid } from '@mui/material';
+import { Box, Typography, IconButton, Link as MuiLink} from '@mui/material';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import Image from 'next/image';
+import Grid from '@mui/material/Grid2';
 
 function Footer() {
   return (
+    
     <Box
       sx={{
         backgroundColor: '#1A202C', // Dark background color
@@ -16,12 +18,12 @@ function Footer() {
         marginTop: 'auto', // Pushes the footer to the bottom
       }}
     >
-      <Grid container spacing={4} justifyContent="center">
+      <Grid container  spacing={4} justifyContent="center">
         {/* Logo and Company Name */}
-        <Grid item xs={12} md={4} sx={{ textAlign: 'center' }}>
+        <Grid item size={{ xs: 12, md: 4 }} sx={{ textAlign: 'center' }}>
           <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <Image
-              src="/logo.png" // Replace with your logo path
+              src="" // Replace with your logo path
               alt="Go Learn Logo"
               width={50}
               height={50}
@@ -36,7 +38,7 @@ function Footer() {
         </Grid>
 
         {/* Social Media Links */}
-        <Grid item xs={12} md={4} sx={{ textAlign: 'center' }}>
+        <Grid item size={{ xs: 12, md: 4 }} sx={{ textAlign: 'center' }}>
           <Typography variant="h6" sx={{ mb: 2 }}>
             تابعنا على
           </Typography>
@@ -73,7 +75,7 @@ function Footer() {
         </Grid>
 
         {/* Quick Links */}
-        <Grid item xs={12} md={4} sx={{ textAlign: 'center' }}>
+        <Grid item size={{ xs: 12, md: 4 }} sx={{ textAlign: 'center' }}>
           <Typography variant="h6" sx={{ mb: 2 }}>
             روابط سريعة
           </Typography>
