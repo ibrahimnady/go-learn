@@ -18,10 +18,10 @@ const drawerWidth = 240;
 
 
 export default function RootLayout({ children }) {
-  const [mode, setmyMode] = useState(localStorage.getItem("currentMode") === null ? "light" : localStorage.getItem("currentMode") === "light" ? "light" : "dark");
+  const [mode, setmyMode] = useState("dark");
   const [DisplaySidebar, setDisplaySidebar] = useState("none");
   const [TypeSidebar, setTypeSidebar] = useState("permanent");
-  const [loggin, setLoggin] = useState(localStorage.getItem("isLoggedIn") === "true");
+  const [loggin, setLoggin] = useState("fales");
   const theme = useMemo(() => createTheme(ThemeMode(mode)), [mode]);
 
   const ShowSidebar = () => {
