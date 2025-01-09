@@ -45,28 +45,28 @@ function Footer() {
           <Box>
             <IconButton
               href="https://facebook.com"
-              target="_blank"
+              target=""
               sx={{ color: '#FFFFFF', '&:hover': { color: '#1877F2' } }}
             >
               <FacebookIcon fontSize="large" />
             </IconButton>
             <IconButton
               href="https://twitter.com"
-              target="_blank"
+              target=""
               sx={{ color: '#FFFFFF', '&:hover': { color: '#1DA1F2' } }}
             >
               <TwitterIcon fontSize="large" />
             </IconButton>
             <IconButton
               href="https://instagram.com"
-              target="_blank"
+              target=""
               sx={{ color: '#FFFFFF', '&:hover': { color: '#E1306C' } }}
             >
               <InstagramIcon fontSize="large" />
             </IconButton>
             <IconButton
               href="https://linkedin.com"
-              target="_blank"
+              target=""
               sx={{ color: '#FFFFFF', '&:hover': { color: '#0A66C2' } }}
             >
               <LinkedInIcon fontSize="large" />
