@@ -50,12 +50,12 @@ body {
     width: 100%;
     text-align: center;
   }
-  .swiper-slide img {
+  /* .swiper-slide img {
   width: 37rem;
   height: 42rem;
   border-radius: 2rem;
   object-fit: cover;
-}
+} */
 }
 .main-content {
   min-height: 100vh; /* يجعل المحتوى الرئيسي يأخذ المساحة الكاملة للصفحة */
