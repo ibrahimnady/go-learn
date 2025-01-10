@@ -129,6 +129,9 @@ function Intro() {
               },
               400: {
                 slidesPerView: 1,
+              },
+              300: {
+                slidesPerView: 1,
               }
             }}
 

@@ -42,11 +42,20 @@ body {
 }
 @media (max-width: 900px) {
   .container-slider {
-    width: 400px;
+    /* width: 400px; */
+    width: auto;
+    text-align: center;
   }
   .swiper-slide {
     width: 100%;
+    text-align: center;
   }
+  .swiper-slide img {
+  width: 37rem;
+  height: 42rem;
+  border-radius: 2rem;
+  object-fit: cover;
+}
 }
 .main-content {
   min-height: 100vh; /* يجعل المحتوى الرئيسي يأخذ المساحة الكاملة للصفحة */
