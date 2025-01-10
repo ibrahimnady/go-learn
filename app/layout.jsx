@@ -18,24 +18,28 @@ const drawerWidth = 240;
 
 
 export default function RootLayout({ children }) {
-  const [mode, setmyMode] = useState("dark");
+  // const [mode, setmyMode] = useState("dark");
   // const [mode, setmyMode] = useState(localStorage.getItem("currentMode") === null ? "light" : localStorage.getItem("currentMode") === "light" ? "light" : "dark");
-  // const [mode, setmyMode] = useState(() => {
-  //   try {
-  //     return localStorage.getItem("currentMode");
-  //   } catch (error) {
-  //     return "dark";
-  //   }
-  // });
-  const [loggin, setLoggin] = useState("fales");
+  const [mode, setmyMode] = useState(() => {
+    try {
+      const storedMode = localStorage.getItem("currentMode");
+      return storedMode !== null ? storedMode : "light";
+    } catch (error) {
+      // console.error(error);
+      return "light";
+    }
+  });
+  // const [loggin, setLoggin] = useState("fales");
   // const [loggin, setLoggin] = useState(localStorage.getItem("isLoggedIn") === "true");
-  // const [loggin, setLoggin] = useState(() => {
-  //   try {
-  //     return localStorage.getItem("isLoggedIn") === "true";
-  //   } catch (error) {
-  //     return false;
-  //   }
-  // });
+  const [loggin, setLoggin] = useState(() => {
+    try {
+      const isLoggedIn = localStorage.getItem("isLoggedIn");
+      return isLoggedIn !== null && isLoggedIn === "true" ? true : false;
+    } catch (error) {
+      // console.error(error);
+      return false;
+    }
+  });
   const [DisplaySidebar, setDisplaySidebar] = useState("none");
   const [TypeSidebar, setTypeSidebar] = useState("permanent");
   const theme = useMemo(() => createTheme(ThemeMode(mode)), [mode]);
