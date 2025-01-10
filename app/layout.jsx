@@ -45,8 +45,6 @@ export default function RootLayout({ children }) {
   useEffect(() => {
     if (loggin === false) {
       router.push('/Intro'); // إعادة التوجيه إلى صفحة Intro بعد تسجيل الخروج
-    } else {
-      router.push('/Subjects'); // إعادة التوجيه إلى الصفحة الرئيسية بعد تسجيل الد
     }
   }, [loggin]);
   const [DisplaySidebar, setDisplaySidebar] = useState("none");
