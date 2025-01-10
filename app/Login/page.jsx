@@ -42,7 +42,7 @@ function Login() {
               id="password"
               autoComplete="current-password"
             />
-            <Link href="/Intro">
+            <Link href="/Subjects">
               <Button
                 type="submit"
                 fullWidth

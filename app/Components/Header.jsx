@@ -12,7 +12,9 @@ import { Logout, Settings } from '@mui/icons-material';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 
+
 function Header({ setmyMode, drawerWidth, ShowSidebar, setLoggin, loggin, DisplaySidebar }) {
+    
     const theme = useTheme();
     const [anchorEl, setAnchorEl] = React.useState(null);
     const openAV = Boolean(anchorEl);
@@ -22,11 +24,14 @@ function Header({ setmyMode, drawerWidth, ShowSidebar, setLoggin, loggin, Displa
     const handleClose = () => {
         setAnchorEl(null);
     };
-
+   
     const logOut = () => {
         localStorage.removeItem("isLoggedIn");
         setLoggin(false)
-        console.log("test")
+        // console.log("test")
+        
+        
+        
     }
     const handleLogin = () => {
         localStorage.setItem("isLoggedIn", "true"); // حفظ الحالة في localStorage
@@ -66,7 +71,7 @@ function Header({ setmyMode, drawerWidth, ShowSidebar, setLoggin, loggin, Displa
                                     <Avatar sx={{ width: 32, height: 32 }} src="https://mui.com/static/images/avatar/1.jpg" />
                                 </IconButton>
                             ) : (
-                                <Link href="/Login">
+                                    <Link href="/Subjects">
                                         <Button color="inherit" onClick={handleLogin}>Sign In</Button>
                                 </Link>
                             )

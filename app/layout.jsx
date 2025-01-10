@@ -1,5 +1,5 @@
 'use client'
-import React, { useMemo } from 'react'
+import React, { useEffect, useMemo } from 'react'
 import "./Styles/globals.css";
 import SideBar from "./Components/SideBar";
 import Footer from "./Components/Footer";
@@ -12,12 +12,14 @@ import ThemeMode from './MyTheme';
 import Login from './Login/page';
 import Intro from './Intro/page';
 import Grid from '@mui/material/Grid2';
+import { useRouter } from 'next/navigation';
 
 const drawerWidth = 240;
 
 
 
 export default function RootLayout({ children }) {
+  const router = useRouter();
   // const [mode, setmyMode] = useState("dark");
   // const [mode, setmyMode] = useState(localStorage.getItem("currentMode") === null ? "light" : localStorage.getItem("currentMode") === "light" ? "light" : "dark");
   const [mode, setmyMode] = useState(() => {
@@ -40,6 +42,11 @@ export default function RootLayout({ children }) {
       return false;
     }
   });
+  useEffect(() => {
+    if (loggin === false) {
+      router.push('/Intro'); // إعادة التوجيه إلى صفحة Intro بعد تسجيل الخروج
+    }
+  }, [loggin]);
   const [DisplaySidebar, setDisplaySidebar] = useState("none");
   const [TypeSidebar, setTypeSidebar] = useState("permanent");
   const theme = useMemo(() => createTheme(ThemeMode(mode)), [mode]);
