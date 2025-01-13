@@ -5,7 +5,7 @@ import React from 'react'
 // import { Box } from '@mui/material'
 import { Container, Typography, Box, Button, Card, CardContent, CardMedia, Rating, Toolbar } from '@mui/material';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { EffectCoverflow, Pagination, Navigation } from 'swiper/modules';
+import { EffectCoverflow, Pagination, Navigation, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
@@ -141,8 +141,12 @@ function Intro() {
               prevEl: '.swiper-button-prev',
               clickable: true,
             }}
-            modules={[EffectCoverflow, Pagination, Navigation]}
+            modules={[EffectCoverflow, Pagination, Navigation, Autoplay]}
             className='swiper-container'
+            autoplay={{
+              delay: 6000, // التأخير بين الصور بالثواني
+              disableOnInteraction: false, // لا يوقف التأخير عند التفاعل مع السليدر
+            }}
 
           >
 
