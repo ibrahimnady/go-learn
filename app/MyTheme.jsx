@@ -16,7 +16,30 @@ const ThemeMode = (mode) => ({
                 },
                 bgCardSubjects: {
                     main: "#b2e7a5"
-                }
+                },
+                background:{
+                    main:"",
+                    bgButton:"",
+                    bgLink:"",
+                    bgHeadline:"",
+                    bgSidebar:"",
+                    bgSubscrbtion:"",
+                    bgCardSubjects:"",
+                    bgCardTeachers:"",
+                    bgContant:"",
+                },
+                Text: {
+                    main: "",
+                    TXTButton: "",
+                    TXTLink: "",
+                    TXTHeadline: "",
+                    TXTSidebar: "",
+                    TXTSubscrbtion: "",
+                    TXTCardSubjects: "",
+                    TXTCardTeachers: "",
+                    TXTContant: "",
+                },
+
             }
             : {
                 text: {
@@ -30,7 +53,18 @@ const ThemeMode = (mode) => ({
                 },
                 bgCardSubjects: {
                     main: "#009f5d"
-                }
+                },
+                background: {
+                    main: "",
+                    bgButton: "",
+                    bgLink: "",
+                    bgHeadline: "",
+                    bgSidebar: "",
+                    bgSubscrbtion: "",
+                    bgCardSubjects: "",
+                    bgCardTeachers: "",
+                    bgContant: "",
+                },
 
             }),
     },

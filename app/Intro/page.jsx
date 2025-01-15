@@ -84,7 +84,7 @@ function Intro() {
 
 
         <Box sx={{ display: 'flex', justifyContent: 'center', mt: 8 }}>
-          <Typography variant="h1" component="h1" gutterBottom>
+          <Typography variant="h2" component="h1" gutterBottom>
             Go Learn
           </Typography>
         </Box>
