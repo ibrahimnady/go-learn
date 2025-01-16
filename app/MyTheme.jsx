@@ -32,7 +32,7 @@ const ThemeMode = (mode) => ({
                 //     main: "",
                 //     TXTButton: "",
                 //     TXTLink: "",
-                //     TXTHeadline: "",
+                //     TXTHeadline: "#11baf0",
                 //     TXTSidebar: "",
                 //     TXTSubscrbtion: "",
                 //     TXTCardSubjects: "",
@@ -55,7 +55,7 @@ const ThemeMode = (mode) => ({
                     main: "#009f5d"
                 },
                 // background: {
-                //     main: "",
+                //     main: "#000000",
                 //     bgButton: "",
                 //     bgLink: "",
                 //     bgHeadline: "",

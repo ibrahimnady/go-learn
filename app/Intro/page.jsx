@@ -249,7 +249,7 @@ function Intro() {
                 }}>
                   <Typography
                   sx={{
-                    borderBottom:'solid'
+                    
                   }} variant="h3" component="div">
                     اشتراك عادي
                   </Typography>
@@ -300,7 +300,7 @@ function Intro() {
                 }}>
                   <Typography
                   sx={{
-                    borderBottom:'solid'
+                    
                   }} variant="h3" component="div">
                     اشتراك عادي
                   </Typography>
@@ -351,7 +351,7 @@ function Intro() {
                 }}>
                   <Typography
                   sx={{
-                    borderBottom:'solid'
+                    
                   }} variant="h3" component="div">
                     اشتراك عادي
                   </Typography>
@@ -402,7 +402,7 @@ function Intro() {
                 }}>
                   <Typography
                   sx={{
-                    borderBottom:'solid'
+                    
                   }} variant="h3" component="div">
                     اشتراك عادي
                   </Typography>

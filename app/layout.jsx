@@ -1,5 +1,8 @@
 'use client'
 import React, { useEffect, useMemo } from 'react'
+
+import { Inter, Cairo } from 'next/font/google';
+
 import "./Styles/globals.css";
 import SideBar from "./Components/SideBar";
 import Footer from "./Components/Footer";
@@ -9,13 +12,13 @@ import { useState } from "react";
 import Header from "./Components/Header";
 import { Box } from '@mui/material';
 import ThemeMode from './MyTheme';
-import Login from './Login/page';
-import Intro from './Intro/page';
-import Grid from '@mui/material/Grid2';
 import { useRouter } from 'next/navigation';
 
 const drawerWidth = 240;
-
+const cairo = Cairo({
+  subsets: ['latin'],
+  weight: ['400', '700'], // يمكنك تحديد الأوزان التي تريدها
+});
 
 
 export default function RootLayout({ children }) {
@@ -61,7 +64,7 @@ export default function RootLayout({ children }) {
   }
 
   return (
-    <html lang="ar">
+    <html lang="ar" className={cairo.className}>
       <head>
         <title>Go Learn</title>
       </head>
