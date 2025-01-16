@@ -153,7 +153,7 @@ function Intro() {
 
 
         <div className='container-slider'>
-          <Typography className="heading" sx={{
+          <Typography variant="h3" className="heading" sx={{
             fontWeight:"bold",
             
             }}>افضل المدرسين </Typography>
