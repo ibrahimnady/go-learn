@@ -45,8 +45,10 @@ const Subjects = () => {
                         <Link href="/Teachers">
                             <Card
                                 sx={{
-                                    backgroundColor: theme.palette.bgCardSubjects.main,
+                                    backgroundColor: theme.palette.background.bgCardSubjects,
+                                    color: theme.palette.Text.TXTCardSubjects,
                                     borderRadius: '16px',
+                                    // border:"solid",
                                     width: '100%',
                                     height: '300px',
                                     display: 'grid',

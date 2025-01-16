@@ -1,6 +1,6 @@
 'use client';
 import React from 'react'
-import { Divider, Drawer, ListItem, ListItemButton, ListItemIcon, ListItemText, Toolbar, useTheme } from '@mui/material'
+import { Divider, Drawer, ListItem, ListItemButton, ListItemIcon, ListItemText, Toolbar, useTheme, Typography } from '@mui/material'
 import InboxIcon from '@mui/icons-material/Inbox';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -23,6 +23,7 @@ function SideBar({ drawerWidth, DisplaySidebar, TypeSidebar, HideSidebar }) {
                     width: drawerWidth,
                     flexShrink: 0,
                     '& .MuiDrawer-paper': {
+                        bgcolor: theme.palette.background.main,
                         width: drawerWidth,
                         boxSizing: "border-box"
                     },
@@ -36,9 +37,16 @@ function SideBar({ drawerWidth, DisplaySidebar, TypeSidebar, HideSidebar }) {
                     HideSidebar()
                 }}
             >
-                <Toolbar sx={{ display: "inline-grid", textAlign: "center", fontSize: 25, }}>
+                <Toolbar sx={{
+                    display: "inline-grid", textAlign: "center", fontSize: 25,
+                    // backgroundColor: theme.palette.background.bgHeadline,
+                    // color: theme.palette.Text.TXTHeadline,
+                    
+                }}>
                     <Link href="/">
-                        Go Learn
+                        <Typography sx={{
+                            fontWeight: "bold"
+                        }} variant="h4" >Go Learn</Typography>
                     </Link>
                 </Toolbar>
                 <Divider />
@@ -50,7 +58,7 @@ function SideBar({ drawerWidth, DisplaySidebar, TypeSidebar, HideSidebar }) {
                                     sx={{
                                         bgcolor: location === item.path
                                             ?
-                                            theme.palette.bgClickSidebar.main
+                                            theme.palette.background.bgSidebar
                                             : null,
                                     }}
                                     disablePadding

@@ -3,7 +3,7 @@ import Link from 'next/link'
 import React from 'react'
 // import Typography from '@mui/material/Typography'
 // import { Box } from '@mui/material'
-import { Container, Typography, Box, Button, Card, CardContent, CardMedia, Rating, Toolbar } from '@mui/material';
+import { Container, Typography, Box, Button, Card, CardContent, CardMedia, Rating, Toolbar, useTheme } from '@mui/material';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCoverflow, Pagination, Navigation, Autoplay } from 'swiper/modules';
 import 'swiper/css';
@@ -69,7 +69,51 @@ const teachers = [
   },
 ];
 
+const subscriptions = [
+  {
+    name: "اشتراك عادي",
+    price: "EGP 50",
+    features: [
+      "الوصول إلى المحتوى الأساسي",
+      "الوصول إلى المحتوى الممتاز",
+      "الوصول إلى المحتوى الممتاز جدا",
+      "الوصول إلى المحتوى الممتاز جدا جدا",
+    ],
+  },
+  {
+    name: "اشتراك ممتاز",
+    price: "EGP 100",
+    features: [
+      "الوصول إلى المحتوى الأساسي",
+      "الوصول إلى المحتوى الممتاز",
+      "الوصول إلى المحتوى الممتاز جدا",
+      "الوصول إلى المحتوى الممتاز جدا جدا",
+    ],
+  },
+  {
+    name: "اشتراك ممتاز جدًا",
+    price: "EGP 150",
+    features: [
+      "الوصول إلى المحتوى الأساسي",
+      "الوصول إلى المحتوى الممتاز",
+      "الوصول إلى المحتوى الممتاز جدا",
+      "الوصول إلى المحتوى الممتاز جدا جدا",
+    ],
+  },
+  {
+    name: "اشتراك ممتاز جدًا جدًا",
+    price: "EGP 200",
+    features: [
+      "الوصول إلى المحتوى الأساسي",
+      "الوصول إلى المحتوى الممتاز",
+      "الوصول إلى المحتوى الممتاز جدا",
+      "الوصول إلى المحتوى الممتاز جدا جدا",
+    ],
+  },
+];
+
 function Intro() {
+  const theme = useTheme();
 
   return (
     <div>
@@ -84,7 +128,11 @@ function Intro() {
 
 
         <Box sx={{ display: 'flex', justifyContent: 'center', mt: 8 }}>
-          <Typography variant="h2" component="h1" gutterBottom>
+          <Typography sx={{
+            fontWeight:"bold",
+            mt:3,
+            color: theme.palette.Text.TXTHeadline,
+            }} variant="h2" component="h1" gutterBottom>
             Go Learn
           </Typography>
         </Box>
@@ -105,7 +153,10 @@ function Intro() {
 
 
         <div className='container-slider'>
-          <h1 className="heading">افضل المدرسين </h1>
+          <Typography className="heading" sx={{
+            fontWeight:"bold",
+            
+            }}>افضل المدرسين </Typography>
           <Swiper
             effect={'coverflow'}
             grabCursor={true}
@@ -223,7 +274,7 @@ function Intro() {
         <Box sx={{ mt: 8 }}>
           <Typography sx={{
             textAlign: "center",
-            fontFamily: 'bold',
+            fontWeight: 'bold',
             borderBottom: "solid"
 
 
@@ -231,214 +282,57 @@ function Intro() {
             عروض الاشتراكات
           </Typography>
 
-          <Grid container spacing={2}>
-            <Grid item size={{ xs: 12, md: 3 }}>
-              <Card sx={{
-                textAlign: "center",
-                bgcolor: "#4CAF50", // لون الخلفية
-                color: "#fff", // لون النص
-                padding: "20px",
-                borderRadius: "10px",
-                boxShadow: "0px 0px 10px rgba(0,0,0,0.2)",
-              }}>
-                <CardContent sx={{
-                  bgcolor: "#3e8e41", // لون الخلفية الداخلية
-                  color: "#fff", // لون النص الداخلي
-                  padding: "20px",
-                  borderRadius: "10px",
-                }}>
-                  <Typography
+
+          
+          <Grid container spacing={4} >
+            {subscriptions.map((subscription, index) => (
+              <Grid item key={index} size={{ xs: 12, md: 3 }}>
+                <Card
                   sx={{
-                    
-                  }} variant="h3" component="div">
-                    اشتراك عادي
-                  </Typography>
-
-                  <Typography variant="h6" color="text.secondary">
-                    EGP 50 : السعر
-                  </Typography>
-                  <Typography sx={{
-                    textAlign: 'right',
-                    color: "#fff", // لون النص
-                  }} variant="body1">
-                    المميزات:
-                    <ul>
-                      <li style={{ color: "#fff" }}>الوصول إلى المحتوى الأساسي</li>
-                      <li style={{ color: "#fff" }}>الوصول إلى المحتوى الممتاز</li>
-                      <li style={{ color: "#fff" }}>الوصول إلى المحتوى الممتاز جدا</li>
-                      <li style={{ color: "#fff" }}>الوصول إلى المحتوى الممتاز جدا جدا</li>
-                    </ul>
-                  </Typography>
-                  <Button variant="contained" color="primary" sx={{
-                    mt: 2,
-                    bgcolor: "#fff", // لون الخلفية
-                    color: "#3e8e41", // لون النص
-                    "&:hover": {
-                      bgcolor: "#fff", // لون الخلفية عند الحوفر
-                      color: "#3e8e41", // لون النص عند الحوفر
-                    }
-                  }}>
-                    اشترك الآن
-                  </Button>
-                </CardContent>
-              </Card>
-            </Grid>
-            <Grid item size={{ xs: 12, md: 3 }}>
-              <Card sx={{
-                textAlign: "center",
-                bgcolor: "#4CAF50", // لون الخلفية
-                color: "#fff", // لون النص
-                padding: "20px",
-                borderRadius: "10px",
-                boxShadow: "0px 0px 10px rgba(0,0,0,0.2)",
-              }}>
-                <CardContent sx={{
-                  bgcolor: "#3e8e41", // لون الخلفية الداخلية
-                  color: "#fff", // لون النص الداخلي
-                  padding: "20px",
-                  borderRadius: "10px",
-                }}>
-                  <Typography
-                  sx={{
-                    
-                  }} variant="h3" component="div">
-                    اشتراك عادي
-                  </Typography>
-
-                  <Typography variant="h6" color="text.secondary">
-                    EGP 50 : السعر
-                  </Typography>
-                  <Typography sx={{
-                    textAlign: 'right',
-                    color: "#fff", // لون النص
-                  }} variant="body1">
-                    المميزات:
-                    <ul>
-                      <li style={{ color: "#fff" }}>الوصول إلى المحتوى الأساسي</li>
-                      <li style={{ color: "#fff" }}>الوصول إلى المحتوى الممتاز</li>
-                      <li style={{ color: "#fff" }}>الوصول إلى المحتوى الممتاز جدا</li>
-                      <li style={{ color: "#fff" }}>الوصول إلى المحتوى الممتاز جدا جدا</li>
-                    </ul>
-                  </Typography>
-                  <Button variant="contained" color="primary" sx={{
-                    mt: 2,
-                    bgcolor: "#fff", // لون الخلفية
-                    color: "#3e8e41", // لون النص
-                    "&:hover": {
-                      bgcolor: "#fff", // لون الخلفية عند الحوفر
-                      color: "#3e8e41", // لون النص عند الحوفر
-                    }
-                  }}>
-                    اشترك الآن
-                  </Button>
-                </CardContent>
-              </Card>
-            </Grid>
-            <Grid item size={{ xs: 12, md: 3 }}>
-              <Card sx={{
-                textAlign: "center",
-                bgcolor: "#4CAF50", // لون الخلفية
-                color: "#fff", // لون النص
-                padding: "20px",
-                borderRadius: "10px",
-                boxShadow: "0px 0px 10px rgba(0,0,0,0.2)",
-              }}>
-                <CardContent sx={{
-                  bgcolor: "#3e8e41", // لون الخلفية الداخلية
-                  color: "#fff", // لون النص الداخلي
-                  padding: "20px",
-                  borderRadius: "10px",
-                }}>
-                  <Typography
-                  sx={{
-                    
-                  }} variant="h3" component="div">
-                    اشتراك عادي
-                  </Typography>
-
-                  <Typography variant="h6" color="text.secondary">
-                    EGP 50 : السعر
-                  </Typography>
-                  <Typography sx={{
-                    textAlign: 'right',
-                    color: "#fff", // لون النص
-                  }} variant="body1">
-                    المميزات:
-                    <ul>
-                      <li style={{ color: "#fff" }}>الوصول إلى المحتوى الأساسي</li>
-                      <li style={{ color: "#fff" }}>الوصول إلى المحتوى الممتاز</li>
-                      <li style={{ color: "#fff" }}>الوصول إلى المحتوى الممتاز جدا</li>
-                      <li style={{ color: "#fff" }}>الوصول إلى المحتوى الممتاز جدا جدا</li>
-                    </ul>
-                  </Typography>
-                  <Button variant="contained" color="primary" sx={{
-                    mt: 2,
-                    bgcolor: "#fff", // لون الخلفية
-                    color: "#3e8e41", // لون النص
-                    "&:hover": {
-                      bgcolor: "#fff", // لون الخلفية عند الحوفر
-                      color: "#3e8e41", // لون النص عند الحوفر
-                    }
-                  }}>
-                    اشترك الآن
-                  </Button>
-                </CardContent>
-              </Card>
-            </Grid>
-            <Grid item size={{ xs: 12, md: 3 }}>
-              <Card sx={{
-                textAlign: "center",
-                bgcolor: "#4CAF50", // لون الخلفية
-                color: "#fff", // لون النص
-                padding: "20px",
-                borderRadius: "10px",
-                boxShadow: "0px 0px 10px rgba(0,0,0,0.2)",
-              }}>
-                <CardContent sx={{
-                  bgcolor: "#3e8e41", // لون الخلفية الداخلية
-                  color: "#fff", // لون النص الداخلي
-                  padding: "20px",
-                  borderRadius: "10px",
-                }}>
-                  <Typography
-                  sx={{
-                    
-                  }} variant="h3" component="div">
-                    اشتراك عادي
-                  </Typography>
-
-                  <Typography variant="h6" color="text.secondary">
-                    EGP 50 : السعر
-                  </Typography>
-                  <Typography sx={{
-                    textAlign: 'right',
-                    color: "#fff", // لون النص
-                  }} variant="body1">
-                    المميزات:
-                    <ul>
-                      <li style={{ color: "#fff" }}>الوصول إلى المحتوى الأساسي</li>
-                      <li style={{ color: "#fff" }}>الوصول إلى المحتوى الممتاز</li>
-                      <li style={{ color: "#fff" }}>الوصول إلى المحتوى الممتاز جدا</li>
-                      <li style={{ color: "#fff" }}>الوصول إلى المحتوى الممتاز جدا جدا</li>
-                    </ul>
-                  </Typography>
-                  <Button variant="contained" color="primary" sx={{
-                    mt: 2,
-                    bgcolor: "#fff", // لون الخلفية
-                    color: "#3e8e41", // لون النص
-                    "&:hover": {
-                      bgcolor: "#fff", // لون الخلفية عند الحوفر
-                      color: "#3e8e41", // لون النص عند الحوفر
-                    }
-                  }}>
-                    اشترك الآن
-                  </Button>
-                </CardContent>
-              </Card>
-            </Grid>
-
-
-
+                    textAlign: 'center',
+                    backgroundColor: theme.palette.background.bgSubscrbtion, // لون الخلفية
+                    // color: theme.palette.Text.TXTSubscrbtion, // لون النص
+                    padding: '20px',
+                    borderRadius: '10px',
+                    border: "solid",
+                    boxShadow: '0px 0px 10px rgba(0,0,0,0.2)',
+                  }}
+                >
+                  <CardContent>
+                    <Typography variant="h4" component="div" sx={{ fontWeight: 'bold' }}>
+                      {subscription.name}
+                    </Typography>
+                    <Typography variant="h6" sx={{ mt: 2 }}>
+                      {subscription.price}
+                    </Typography>
+                    <Typography variant="body1" sx={{ mt: 2, textAlign: 'right' }}>
+                      المميزات:
+                      <ul style={{ paddingRight: '20px' }}>
+                        {subscription.features.map((feature, i) => (
+                          <li key={i} >
+                            {feature}
+                          </li>
+                        ))}
+                      </ul>
+                    </Typography>
+                    <Button
+                      variant="contained"
+                      sx={{
+                        mt: 2,
+                        backgroundColor: theme.palette.background.bgButton,
+                        
+                        '&:hover': {
+                          backgroundColor: '#fff',
+                          color: '#3e8e41',
+                        },
+                      }}
+                    >
+                      اشترك الآن
+                    </Button>
+                  </CardContent>
+                </Card>
+              </Grid>
+            ))}
           </Grid>
         </Box>
       </Container>

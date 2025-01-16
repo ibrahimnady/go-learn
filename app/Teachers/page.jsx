@@ -76,10 +76,12 @@ const Teachers = () => {
                         <Card sx={{
                             transition: 'transform 0.3s, box-shadow 0.3s',
                             transition: '0.5s',
+                            
+                            borderTopLeftRadius: '16px', 
+                            borderTopRightRadius: '16px', 
                             '&:hover': {
                                 transform: 'scale(1.05)',
                                 boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.3)',
-                                // backgroundColor: theme.palette.bgCardSubjects.main,
                                 // backgroundColor: "#ffff",
                             }
                         }}>
@@ -88,9 +90,9 @@ const Teachers = () => {
                                 height="140"
                                 image={teacher.image}
                                 alt={teacher.name}
-                                sx={{ borderTopLeftRadius: '16px', borderTopRightRadius: '16px' }}
+                                sx={{ borderTopLeftRadius: '16px', borderTopRightRadius: '16px',  }}
                             />
-                            <CardContent>
+                            <CardContent sx={{   backgroundColor: theme.palette.background.bgCardTeachers, }}>
                                 <Grid container spacing={2}>
                                     <Grid item xs={4} container direction="column" justifyContent="center">
                                         <Button variant="contained" color="primary" style={{ marginBottom: '10px' }}>

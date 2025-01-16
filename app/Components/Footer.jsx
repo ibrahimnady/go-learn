@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Typography, IconButton, Link as MuiLink} from '@mui/material';
+import { Box, Typography, IconButton, Link as MuiLink, useTheme} from '@mui/material';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
@@ -8,12 +8,13 @@ import Image from 'next/image';
 import Grid from '@mui/material/Grid2';
 
 function Footer() {
+  const theme = useTheme();
   return (
     
     <Box
       sx={{
-        backgroundColor: '#1A202C', // Dark background color
-        color: '#FFFFFF', // White text color
+        backgroundColor: theme.palette.background.main, // Dark background color
+        color: theme.palette.Text.main, // White text color
         padding: '40px 20px',
         marginTop: 'auto', // Pushes the footer to the bottom
       }}

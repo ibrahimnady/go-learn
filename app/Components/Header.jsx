@@ -50,6 +50,8 @@ function Header({ setmyMode, drawerWidth, ShowSidebar, setLoggin, loggin, Displa
                     // width: { sm: `calc(100% - ${drawerWidth}px)` }, mr: { xs: 0, sm: `${drawerWidth}px` },
                     position: "fixed",
                     zIndex: (theme) => theme.zIndex.drawer + 1,
+                    bgcolor: theme.palette.background.main,
+                    color: theme.palette.Text.main
                 }}
                 position="static"
 
@@ -67,7 +69,7 @@ function Header({ setmyMode, drawerWidth, ShowSidebar, setLoggin, loggin, Displa
                                     aria-haspopup="true"
                                     aria-expanded={openAV ? 'true' : undefined}
                                 >
-                                    <Typography mr={2} variant="body1" ><ArrowDropDownIcon /> Ibrahim Nady</Typography>
+                                    <Typography sx={{fontWeight: "bold"}} mr={2} variant="body1" ><ArrowDropDownIcon /> Ibrahim Nady</Typography>
                                     <Avatar sx={{ width: 32, height: 32 }} src="https://mui.com/static/images/avatar/1.jpg" />
                                 </IconButton>
                             ) : (
