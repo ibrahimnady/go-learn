@@ -153,10 +153,10 @@ function Intro() {
 
 
         <div className='container-slider'>
-          <Typography variant="h3" className="heading" sx={{
+          {/* <Typography variant="h3" className="heading" sx={{
             fontWeight:"bold",
             
-            }}>افضل المدرسين </Typography>
+            }}>افضل المدرسين </Typography> */}
           <Swiper
             effect={'coverflow'}
             grabCursor={true}
@@ -197,7 +197,9 @@ function Intro() {
             autoplay={{
               delay: 6000, // التأخير بين الصور بالثواني
               disableOnInteraction: false, // لا يوقف التأخير عند التفاعل مع السليدر
+              
             }}
+            
 
           >
 
