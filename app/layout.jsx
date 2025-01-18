@@ -50,6 +50,7 @@ export default function RootLayout({ children }) {
       router.push('/Intro'); // إعادة التوجيه إلى صفحة Intro بعد تسجيل الخروج
     }
   }, [loggin]);
+
   const [DisplaySidebar, setDisplaySidebar] = useState("none");
   const [TypeSidebar, setTypeSidebar] = useState("permanent");
   const theme = useMemo(() => createTheme(ThemeMode(mode)), [mode]);

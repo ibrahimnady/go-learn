@@ -74,7 +74,7 @@ const subscriptions = [
     name: "اشتراك عادي",
     price: "EGP 50",
     features: [
-      "الوصول إلى المحتوى الأساسي",
+      " الوصول إلى المحتوى الأساسي ",
       "الوصول إلى المحتوى الممتاز",
       "الوصول إلى المحتوى الممتاز جدا",
       "الوصول إلى المحتوى الممتاز جدا جدا",
@@ -112,6 +112,7 @@ const subscriptions = [
   },
 ];
 
+
 function Intro() {
   const theme = useTheme();
 
@@ -129,10 +130,10 @@ function Intro() {
 
         <Box sx={{ display: 'flex', justifyContent: 'center', mt: 8 }}>
           <Typography sx={{
-            fontWeight:"bold",
-            mt:3,
+            fontWeight: "bold",
+            mt: 3,
             color: theme.palette.Text.TXTHeadline,
-            }} variant="h2" component="h1" gutterBottom>
+          }} variant="h2" component="h1" gutterBottom>
             Go Learn
           </Typography>
         </Box>
@@ -197,9 +198,9 @@ function Intro() {
             autoplay={{
               delay: 6000, // التأخير بين الصور بالثواني
               disableOnInteraction: false, // لا يوقف التأخير عند التفاعل مع السليدر
-              
+
             }}
-            
+
 
           >
 
@@ -285,33 +286,53 @@ function Intro() {
           </Typography>
 
 
-          
+
           <Grid container spacing={4} >
             {subscriptions.map((subscription, index) => (
-              <Grid item key={index} size={{ xs: 12, md: 3 }}>
+              <Grid item key={index} size={{ xs: 12, md: 3 }} sx={{
+                borderRadius: "10px",
+                '&:hover': {
+                  boxShadow: `0px 4px 20px ${subscription.name === "اشتراك عادي" ? "#198754" :
+                    subscription.name === "اشتراك ممتاز" ? "#0D6EFD" :
+                      subscription.name === "اشتراك ممتاز جدًا" ? "#cc9a06" :
+                        subscription.name === "اشتراك ممتاز جدًا جدًا" ? "#DC3545" : "#ffffff"}`,
+                  transform: 'scale(1.05)',
+                  transition: "0.5s"
+                }
+              }}>
                 <Card
                   sx={{
                     textAlign: 'center',
                     backgroundColor: theme.palette.background.bgSubscrbtion, // لون الخلفية
                     // color: theme.palette.Text.TXTSubscrbtion, // لون النص
-                    padding: '20px',
+                    padding: '10px',
                     borderRadius: '10px',
-                    border: "solid",
+                    // border: "solid",
                     boxShadow: '0px 0px 10px rgba(0,0,0,0.2)',
                   }}
                 >
                   <CardContent>
-                    <Typography variant="h4" component="div" sx={{ fontWeight: 'bold' }}>
-                      {subscription.name}
-                    </Typography>
-                    <Typography variant="h6" sx={{ mt: 2 }}>
-                      {subscription.price}
-                    </Typography>
-                    <Typography variant="body1" sx={{ mt: 2, textAlign: 'right' }}>
-                      المميزات:
-                      <ul style={{ paddingRight: '20px' }}>
+                    <Box sx={{
+                      bgcolor: subscription.name === "اشتراك عادي" ? "#198754" :
+                        subscription.name === "اشتراك ممتاز" ? "#0D6EFD" :
+                          subscription.name === "اشتراك ممتاز جدًا" ? "#cc9a06" :
+                            subscription.name === "اشتراك ممتاز جدًا جدًا" ? "#DC3545" : "#ffffff",
+                      padding: 5,
+                      borderRadius: '10px',
+                      border: "solid 1px "
+
+                    }}>
+                      <Typography variant="h4" component="div" sx={{ fontWeight: 'bold' }}>
+                        {subscription.name}
+                      </Typography>
+                      <Typography variant="h4" sx={{ mt: 2, fontWeight:"bold"}}>
+                        {subscription.price}
+                      </Typography>
+                    </Box>
+                    <Typography variant="h5" sx={{ mt: 2, textAlign: 'right', fontWeight: "bold" }}>
+                      <ul style={{}}>
                         {subscription.features.map((feature, i) => (
-                          <li key={i} >
+                          <li style={{ borderBottom: " solid 1px #777575", padding: "10px" }} key={i} >
                             {feature}
                           </li>
                         ))}
@@ -322,7 +343,7 @@ function Intro() {
                       sx={{
                         mt: 2,
                         backgroundColor: theme.palette.background.bgButton,
-                        
+
                         '&:hover': {
                           backgroundColor: '#fff',
                           color: '#3e8e41',
@@ -336,6 +357,7 @@ function Intro() {
               </Grid>
             ))}
           </Grid>
+
         </Box>
       </Container>
     </div >
