@@ -69,52 +69,12 @@ const teachers = [
   },
 ];
 
-const subscriptions = [
-  {
-    name: "اشتراك عادي",
-    price: "EGP 50",
-    features: [
-      " الوصول إلى المحتوى الأساسي ",
-      "الوصول إلى المحتوى الممتاز",
-      "الوصول إلى المحتوى الممتاز جدا",
-      "الوصول إلى المحتوى الممتاز جدا جدا",
-    ],
-  },
-  {
-    name: "اشتراك ممتاز",
-    price: "EGP 100",
-    features: [
-      "الوصول إلى المحتوى الأساسي",
-      "الوصول إلى المحتوى الممتاز",
-      "الوصول إلى المحتوى الممتاز جدا",
-      "الوصول إلى المحتوى الممتاز جدا جدا",
-    ],
-  },
-  {
-    name: "اشتراك ممتاز جدًا",
-    price: "EGP 150",
-    features: [
-      "الوصول إلى المحتوى الأساسي",
-      "الوصول إلى المحتوى الممتاز",
-      "الوصول إلى المحتوى الممتاز جدا",
-      "الوصول إلى المحتوى الممتاز جدا جدا",
-    ],
-  },
-  {
-    name: "اشتراك ممتاز جدًا جدًا",
-    price: "EGP 200",
-    features: [
-      "الوصول إلى المحتوى الأساسي",
-      "الوصول إلى المحتوى الممتاز",
-      "الوصول إلى المحتوى الممتاز جدا",
-      "الوصول إلى المحتوى الممتاز جدا جدا",
-    ],
-  },
-];
 
 
 function Intro() {
   const theme = useTheme();
+
+  
 
   return (
     <div>
@@ -282,81 +242,68 @@ function Intro() {
 
 
           }} variant="h2" component="h1" gutterBottom>
-            عروض الاشتراكات
+           اشحن محفظتك الان
           </Typography>
 
+          <Box
+            sx={{
+              backgroundColor: '#1976d2',
+              padding: 4,
+              borderRadius: 4,
+              color: 'white',
+              textAlign: 'center',
+              maxWidth: 600,
+              margin: '0 auto',
+              mt: 4
+            }}
+          >
+            <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', mb: 3 }}>
+              {/* <img src="https://via.placeholder.com/300" alt="Student" style={{ width: 100, height: 100 }} /> */}
+            </Box>
 
+            <Typography variant="h4" component="h2" sx={{ mb: 2, fontWeight: 'bold' }}>
+              كن مستعد للتفوق في دراستك!
+            </Typography>
 
-          <Grid container spacing={4} >
-            {subscriptions.map((subscription, index) => (
-              <Grid item key={index} size={{ xs: 12, md: 3 }} sx={{
-                borderRadius: "10px",
-                '&:hover': {
-                  boxShadow: `0px 4px 20px ${subscription.name === "اشتراك عادي" ? "#198754" :
-                    subscription.name === "اشتراك ممتاز" ? "#0D6EFD" :
-                      subscription.name === "اشتراك ممتاز جدًا" ? "#cc9a06" :
-                        subscription.name === "اشتراك ممتاز جدًا جدًا" ? "#DC3545" : "#ffffff"}`,
-                  transform: 'scale(1.05)',
-                  transition: "0.5s"
-                }
-              }}>
-                <Card
-                  sx={{
-                    textAlign: 'center',
-                    backgroundColor: theme.palette.background.bgSubscrbtion, // لون الخلفية
-                    // color: theme.palette.Text.TXTSubscrbtion, // لون النص
-                    padding: '10px',
-                    borderRadius: '10px',
-                    // border: "solid",
-                    boxShadow: '0px 0px 10px rgba(0,0,0,0.2)',
-                  }}
-                >
-                  <CardContent>
-                    <Box sx={{
-                      bgcolor: subscription.name === "اشتراك عادي" ? "#198754" :
-                        subscription.name === "اشتراك ممتاز" ? "#0D6EFD" :
-                          subscription.name === "اشتراك ممتاز جدًا" ? "#cc9a06" :
-                            subscription.name === "اشتراك ممتاز جدًا جدًا" ? "#DC3545" : "#ffffff",
-                      padding: 5,
-                      borderRadius: '10px',
-                      border: "solid 1px "
+            <Typography variant="h6" sx={{ mb: 4 }}>
+              تعلم وارفع معدّلك من خلال فيديوهات تشرح موادك الدراسية واختبارات قوية مع أفضل المعلمين
+            </Typography>
 
-                    }}>
-                      <Typography variant="h4" component="div" sx={{ fontWeight: 'bold' }}>
-                        {subscription.name}
-                      </Typography>
-                      <Typography variant="h4" sx={{ mt: 2, fontWeight:"bold"}}>
-                        {subscription.price}
-                      </Typography>
-                    </Box>
-                    <Typography variant="h5" sx={{ mt: 2, textAlign: 'right', fontWeight: "bold" }}>
-                      <ul style={{}}>
-                        {subscription.features.map((feature, i) => (
-                          <li style={{ borderBottom: " solid 1px #777575", padding: "10px" }} key={i} >
-                            {feature}
-                          </li>
-                        ))}
-                      </ul>
-                    </Typography>
-                    <Button
-                      variant="contained"
-                      sx={{
-                        mt: 2,
-                        backgroundColor: theme.palette.background.bgButton,
+            <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+              <Button
+                variant="contained"
+                size="large"
+                sx={{
+                  backgroundColor: '#ffd700',
+                  color: '#000',
+                  '&:hover': {
+                    backgroundColor: '#ffed4a',
+                  },
+                  fontSize: '1.1rem',
+                  py: 1.5
+                }}
+                startIcon={<span style={{ marginLeft: 8 }}>🔑</span>}
+              >
+                ادخل مفتاح الاشتراك
+              </Button>
 
-                        '&:hover': {
-                          backgroundColor: '#fff',
-                          color: '#3e8e41',
-                        },
-                      }}
-                    >
-                      اشترك الآن
-                    </Button>
-                  </CardContent>
-                </Card>
-              </Grid>
-            ))}
-          </Grid>
+              <Button
+                variant="contained"
+                size="large"
+                sx={{
+                  backgroundColor: 'white',
+                  color: '#1976d2',
+                  '&:hover': {
+                    backgroundColor: '#f5f5f5',
+                  },
+                  fontSize: '1.1rem',
+                  py: 1.5
+                }}
+              >
+                شراء اشتراك
+              </Button>
+            </Box>
+          </Box>
 
         </Box>
       </Container>
