@@ -627,7 +627,7 @@ function Intro() {
                   py: 1.5
                 }}
               >
-                شراء اشتراك
+                شراء اشتراك جديد
               </Button>
             </Box>
           </Box>
