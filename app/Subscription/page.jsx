@@ -50,7 +50,7 @@ function Subscription() {
                 </Box>
             </Box>
         </div>
-    )
+    );
 }
 
 export default Subscription;

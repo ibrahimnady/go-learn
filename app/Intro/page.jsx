@@ -314,11 +314,11 @@ function Intro() {
           }} variant="h2" component="h1" gutterBottom>
             اشحن محفظتك الان
           </Typography>
-          {/* <Subscription /> */}
+          <Subscription />
         </Box>
       </Container>
     </div >
-  )
+  );
 }
 
-export default Intro
+export default Intro;
