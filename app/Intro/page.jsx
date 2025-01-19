@@ -342,8 +342,6 @@ import imageIntro from '/Public/homePage.webp';
 
 
 
-
-
 const teachers = [
   {
     name: 'أحمد محمد',
