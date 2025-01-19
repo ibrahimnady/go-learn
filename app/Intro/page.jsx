@@ -16,6 +16,7 @@ import imageIntro from '/public/homePage.webp';
 import IMGintro1 from '/public/abwaab-scholarship.svg';
 import IMGintro2 from '/public/images.jpg';
 import IMGintro3 from '/public/helpTeacher.jpg';
+import Subscription from '../Subscription/page';
 
 
 
@@ -218,7 +219,7 @@ function Intro() {
           >
 
             {teachers.map((teacher, index) => (
-              <SwiperSlide key={teacher}>
+              <SwiperSlide key={index}>
                 <img src={teacher.image} alt="صورة الذكاء الاصطناعي" />
               </SwiperSlide>
             ))}
@@ -315,7 +316,7 @@ function Intro() {
           }} variant="h2" component="h1" gutterBottom>
             اشحن محفظتك الان
           </Typography>
-          {/* <Subscription /> */}
+          <Subscription />
           
         </Box>
       </Container>
