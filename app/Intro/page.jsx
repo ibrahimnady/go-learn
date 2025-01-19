@@ -1,8 +1,6 @@
 'use client'
 import Link from 'next/link'
 import React from 'react'
-// import Typography from '@mui/material/Typography'
-// import { Box } from '@mui/material'
 import { Container, Typography, Box, Button, Card, CardContent, CardMedia, Rating, Toolbar, useTheme } from '@mui/material';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCoverflow, Pagination, Navigation, Autoplay } from 'swiper/modules';
@@ -11,6 +9,16 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import 'swiper/css/effect-coverflow';
 import Grid from '@mui/material/Grid2';
+import Image from 'next/image';
+import imageIntro from '/Public/homePage.webp';
+import googlePlay from '/Public/google.play.svg';
+import appStore from '/Public/appstore.svg';
+import IMGintro1 from '/Public/abwaab-scholarship.svg';
+import IMGintro2 from '/Public/images.jpg';
+import IMGintro3 from '/Public/helpTeacher.jpg';
+
+import Subscription from '../Subscription/page';
+
 
 
 
@@ -74,7 +82,7 @@ const teachers = [
 function Intro() {
   const theme = useTheme();
 
-  
+
 
   return (
     <div>
@@ -86,31 +94,76 @@ function Intro() {
 
       <Container component="main" maxWidth="100%" sx={{ textAlign: 'right' }}>
 
-
-
-        <Box sx={{ display: 'flex', justifyContent: 'center', mt: 8 }}>
-          <Typography sx={{
-            fontWeight: "bold",
-            mt: 3,
-            color: theme.palette.Text.TXTHeadline,
-          }} variant="h2" component="h1" gutterBottom>
-            Go Learn
-          </Typography>
+        <Box sx={{ mt: 8 }}>
+          <Grid container sx={{ justifyContent: 'center', alignItems: 'center', width: "100%", }} spacing={2}>
+            <Grid item size={{ xs: 12, md: 6 }}>
+              <Image
+                src={imageIntro}
+                alt="Landscape picture"
+                width={800}
+                height={500}
+              />
+            </Grid>
+            <Grid item sx={{ textAlign: 'center' }} size={{ xs: 12, md: 6 }}>
+              <Box sx={{ display: 'flex', justifyContent: 'center', mt: 8 }}>
+                <Typography sx={{
+                  fontWeight: "bold",
+                  mt: 3,
+                  color: theme.palette.Text.TXTHeadline,
+                }} variant="h1" component="h1" gutterBottom>
+                  Go Learn
+                </Typography>
+              </Box>
+              <Typography sx={{
+                textAlign: "center",
+                fontWeight: "bold",
+                color: theme.palette.Text.TXTHeadline,
+              }} variant="h3" component="h1" gutterBottom>
+                بيئة تعليمية متكاملة
+              </Typography>
+              <Typography sx={{
+                textAlign: "center",
+                fontWeight: "bold",
+                color: theme.palette.Text.TXTHeadline,
+              }} variant="h3" component="h1" gutterBottom>
+                معك خطوة بخطوة لتتفوق
+              </Typography>
+              <Box sx={{ display: 'flex', justifyContent: 'center', mt: 2 }}>
+                <Link href="/Login">
+                  <Button variant="contained" color="primary" sx={{ mr: 2 }}>
+                    تسجيل الدخول
+                  </Button>
+                </Link>
+                <Link href="/Register">
+                  <Button variant="contained" color="secondary">
+                    تسجيل طالب جديد
+                  </Button>
+                </Link>
+              </Box>
+            </Grid>
+          </Grid>
         </Box>
-        <Box sx={{ display: 'flex', justifyContent: 'center', mt: 2 }}>
-          <Link href="/Login">
-            <Button variant="contained" color="primary" sx={{ mr: 2 }}>
-              تسجيل الدخول
+        <Box sx={{ mt: 8 }}>
+          <Typography sx={{ textAlign: "center", fontWeight: "bold", }} variant="h5" >حمل التطبيق </Typography>
+          <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+            <Button>
+              <Image
+                src={googlePlay}
+                alt="Landscape picture"
+                width={200}
+                height={200}
+              />
             </Button>
-          </Link>
-          <Link href="/Register">
-            <Button variant="contained" color="secondary">
-              تسجيل طالب جديد
+            <Button>
+              <Image
+                src={appStore}
+                alt="Landscape picture"
+                width={200}
+                height={200}
+              />
             </Button>
-          </Link>
+          </Box>
         </Box>
-
-
 
 
         <div className='container-slider'>
@@ -185,15 +238,20 @@ function Intro() {
 
 
         <Box sx={{ display: 'flex', justifyContent: 'center', mt: 8 }}>
-          <Grid container sx={{ width: "100%", }} spacing={2}>
+          <Grid container sx={{ width: "100%", justifyContent: 'center', alignItems: 'center', }} spacing={2}>
             <Grid item size={{ xs: 12, md: 6 }}>
-              <img src="https://via.placeholder.com/300" alt="صورة التعليم" />
+              <Image
+                src={IMGintro1}
+                alt="Landscape picture"
+                width={800}
+                height={500}
+              />
             </Grid>
             <Grid item size={{ xs: 12, md: 6 }}>
-              <Typography variant="h4" component="h1" gutterBottom>
+              <Typography sx={{ textAlign: "right", fontWeight: "bold", }} variant="h2" component="h1" gutterBottom>
                 من نحن ؟
               </Typography>
-              <Typography variant="body1" gutterBottom>
+              <Typography variant="h4" gutterBottom>
                 نحن شركة Go Learn مساعدك الأول في التفوق والنجاح معا نستطيع حل مشاكل التعليم في المراحل التعليمية والأزهرية ونوفر لك مميزات لم تراها من قبل مع Go Learn
               </Typography>
             </Grid>
@@ -203,17 +261,22 @@ function Intro() {
 
 
         <Box sx={{ display: 'flex', justifyContent: 'center', mt: 8 }}>
-          <Grid container sx={{ width: "100%", }} spacing={2}>
+          <Grid container sx={{ width: "100%", justifyContent: 'center', alignItems: 'center' }} spacing={2}>
             <Grid item size={{ xs: 12, md: 6 }}>
-              <img src="https://via.placeholder.com/300" alt="صورة الذكاء الاصطناعي" />
+              <Typography sx={{ textAlign: "right", fontWeight: "bold", }} variant="h2" component="h1" gutterBottom>
+               ميزة الذكاء الاصطناعي
+              </Typography>
+              <Typography variant="h4" gutterBottom>
+                نوفر لك مساعد منتور خصيصا لك يساعدك صنع جدول يكون مناسب معاك ومساعدتك في أي مشكلة تخص المواد بتاعك في أسرع وقت واجابتك علي اي سوال
+              </Typography>
             </Grid>
             <Grid item size={{ xs: 12, md: 6 }}>
-              <Typography variant="h4" component="h1" gutterBottom>
-                نوفر لك ميزة الذكاء الاصطناعي لمساعدتك في الدراسة بشكل أفضل مع توفير حصص لايف متناسبة مع وقتك خصيصا لك
-              </Typography>
-              <Typography variant="body1" gutterBottom>
-                نوفر لك مساعد منتور خصيصا لك يساعدك صنع جدول يكون مناسب معاك ومساعدتك في أي مشكلة تخص المواد بتاعك في أ سرع وقت
-              </Typography>
+              <Image
+                src={IMGintro2}
+                alt="Landscape picture"
+                width={800}
+                height={500}
+              />
             </Grid>
           </Grid>
         </Box>
@@ -221,11 +284,19 @@ function Intro() {
 
 
         <Box sx={{ display: 'flex', justifyContent: 'center', mt: 8 }}>
-          <Grid container sx={{ width: "100%", }} spacing={2}>
+          <Grid container sx={{ width: "100%", justifyContent: 'center', alignItems: 'center' }} spacing={2}>
             <Grid item size={{ xs: 12, md: 6 }}>
-              <img src="https://via.placeholder.com/300" alt="صورة المونترو" />
+              <Image
+                src={IMGintro3}
+                alt="Landscape picture"
+                width={800}
+                height={500}
+              />
             </Grid>
             <Grid item size={{ xs: 12, md: 6 }}>
+              <Typography sx={{ textAlign: "right", fontWeight: "bold", }} variant="h2" component="h1" gutterBottom>
+                مساعدك الاول في التفوق
+              </Typography>
               <Typography variant="h4" component="h1" gutterBottom>
                 نوفر لك مساعد منتور خصيصا لك يساعدك صنع جدول يكون مناسب معاك ومساعدتك في أي مشكلة تخص المواد بتاعك في أسرع وقت
               </Typography>
@@ -242,69 +313,9 @@ function Intro() {
 
 
           }} variant="h2" component="h1" gutterBottom>
-           اشحن محفظتك الان
+            اشحن محفظتك الان
           </Typography>
-
-          <Box
-            sx={{
-              backgroundColor: '#1976d2',
-              padding: 4,
-              borderRadius: 4,
-              color: 'white',
-              textAlign: 'center',
-              maxWidth: 600,
-              margin: '0 auto',
-              mt: 4
-            }}
-          >
-            <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', mb: 3 }}>
-              {/* <img src="https://via.placeholder.com/300" alt="Student" style={{ width: 100, height: 100 }} /> */}
-            </Box>
-
-            <Typography variant="h4" component="h2" sx={{ mb: 2, fontWeight: 'bold' }}>
-              كن مستعد للتفوق في دراستك!
-            </Typography>
-
-            <Typography variant="h6" sx={{ mb: 4 }}>
-              تعلم وارفع معدّلك من خلال فيديوهات تشرح موادك الدراسية واختبارات قوية مع أفضل المعلمين
-            </Typography>
-
-            <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-              <Button
-                variant="contained"
-                size="large"
-                sx={{
-                  backgroundColor: '#ffd700',
-                  color: '#000',
-                  '&:hover': {
-                    backgroundColor: '#ffed4a',
-                  },
-                  fontSize: '1.1rem',
-                  py: 1.5
-                }}
-                startIcon={<span style={{ marginLeft: 8 }}>🔑</span>}
-              >
-                ادخل مفتاح الاشتراك
-              </Button>
-
-              <Button
-                variant="contained"
-                size="large"
-                sx={{
-                  backgroundColor: 'white',
-                  color: '#1976d2',
-                  '&:hover': {
-                    backgroundColor: '#f5f5f5',
-                  },
-                  fontSize: '1.1rem',
-                  py: 1.5
-                }}
-              >
-                شراء اشتراك
-              </Button>
-            </Box>
-          </Box>
-
+          <Subscription />
         </Box>
       </Container>
     </div >

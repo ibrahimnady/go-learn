@@ -1,16 +1,17 @@
 import React from 'react';
-import { Box, Typography, IconButton, Link as MuiLink, useTheme} from '@mui/material';
+import { Box, Typography, IconButton, Link as MuiLink, useTheme } from '@mui/material';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import Image from 'next/image';
 import Grid from '@mui/material/Grid2';
+import payment from '/Public/eg.svg';
 
 function Footer() {
   const theme = useTheme();
   return (
-    
+
     <Box
       sx={{
         backgroundColor: theme.palette.background.main, // Dark background color
@@ -19,7 +20,7 @@ function Footer() {
         marginTop: 'auto', // Pushes the footer to the bottom
       }}
     >
-      <Grid container  spacing={4} justifyContent="center">
+      <Grid container spacing={4} justifyContent="center">
         {/* Logo and Company Name */}
         <Grid item size={{ xs: 12, md: 4 }} sx={{ textAlign: 'center' }}>
           <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
@@ -97,6 +98,14 @@ function Footer() {
         </Grid>
       </Grid>
 
+      <Box sx={{ display: 'flex', justifyContent: 'center', mt: 2 }}>
+        <Image
+          src={payment}
+          alt="Landscape picture"
+          width={200}
+          height={200}
+        />
+      </Box>
       {/* Copyright */}
       <Typography variant="body2" sx={{ textAlign: 'center', mt: 4 }}>
         © {new Date().getFullYear()} Go Learn. جميع الحقوق محفوظة.
