@@ -4,7 +4,7 @@ import { Box, Button, Typography, useTheme } from '@mui/material'
 function Subscription() {
     const theme = useTheme();
     return (
-        <>
+        <div>
             <Box
                 sx={{
                     backgroundColor: '#1976d2',
@@ -34,11 +34,10 @@ function Subscription() {
                         variant="contained"
                         size="large"
                         sx={{
-                            backgroundColor: theme.palette.background.paper,
-                            color: theme.palette.text.primary,
+                            backgroundColor: theme.palette.background.bgSubscrbtion,
+                            color: theme.palette.Text.TXTSubscrbtion,
                             '&:hover': {
-                                backgroundColor: theme.palette.primary.main,
-                                color: '#fff'
+                                backgroundColor: '#ffed4a',
                             },
                             fontSize: '1.1rem',
                             py: 1.5
@@ -49,8 +48,8 @@ function Subscription() {
                     </Button>
                 </Box>
             </Box>
-        </>
-    );
+        </div>
+    )
 }
 
 export default Subscription;
