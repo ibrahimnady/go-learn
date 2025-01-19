@@ -10,12 +10,12 @@ import 'swiper/css/navigation';
 import 'swiper/css/effect-coverflow';
 import Grid from '@mui/material/Grid2';
 import Image from 'next/image';
-import imageIntro from '/Public/homePage.webp';
-import googlePlay from '/Public/google.play.svg';
-import appStore from '/Public/appstore.svg';
-import IMGintro1 from '/Public/abwaab-scholarship.svg';
-import IMGintro2 from '/Public/images.jpg';
-import IMGintro3 from '/Public/helpTeacher.jpg';
+import googlePlay from '../../public/google.play.svg';
+import appStore from '../../public/appstore.svg';
+import imageIntro from '../../public/homePage.webp';
+import IMGintro1 from '../../public/abwaab-scholarship.svg';
+import IMGintro2 from '../../public/images.jpg';
+import IMGintro3 from '../../public/helpTeacher.jpg';
 import Subscription from '../Subscription/page';
 
 
