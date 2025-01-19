@@ -1,8 +1,6 @@
 'use client'
 import React, { useEffect, useMemo } from 'react'
-
 import { Inter, Cairo } from 'next/font/google';
-
 import "./Styles/globals.css";
 import SideBar from "./Components/SideBar";
 import Footer from "./Components/Footer";
