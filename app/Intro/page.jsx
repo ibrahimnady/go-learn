@@ -16,7 +16,6 @@ import appStore from '/Public/appstore.svg';
 import IMGintro1 from '/Public/abwaab-scholarship.svg';
 import IMGintro2 from '/Public/images.jpg';
 import IMGintro3 from '/Public/helpTeacher.jpg';
-
 import Subscription from '../Subscription/page';
 
 
