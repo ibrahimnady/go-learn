@@ -16,7 +16,8 @@ import imageIntro from '/public/homePage.webp';
 import IMGintro1 from '/public/abwaab-scholarship.svg';
 import IMGintro2 from '/public/images.jpg';
 import IMGintro3 from '/public/helpTeacher.jpg';
-import Subscription from '../Subscription/page';
+import Subscription from '../Subscription/page.jsx';
+
 
 
 

@@ -1,10 +1,11 @@
+"use client"
 import React from 'react'
 import { Box, Button, Typography, useTheme } from '@mui/material'
 
 function Subscription() {
     const theme = useTheme();
     return (
-        <div>
+        <>
             <Box
                 sx={{
                     backgroundColor: '#1976d2',
@@ -49,7 +50,7 @@ function Subscription() {
                     </Button>
                 </Box>
             </Box>
-        </div>
+        </>
     );
 }
 
