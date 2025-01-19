@@ -338,6 +338,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import 'swiper/css/effect-coverflow';
 import Grid from '@mui/material/Grid2';
+import Subscription from '../Subscription/page';
 
 
 
@@ -572,65 +573,7 @@ function Intro() {
             اشحن محفظتك الان
           </Typography>
 
-          <Box
-            sx={{
-              backgroundColor: '#1976d2',
-              padding: 4,
-              borderRadius: 4,
-              color: 'white',
-              textAlign: 'center',
-              maxWidth: 600,
-              margin: '0 auto',
-              mt: 4
-            }}
-          >
-            <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', mb: 3 }}>
-              {/* <img src="https://via.placeholder.com/300" alt="Student" style={{ width: 100, height: 100 }} /> */}
-            </Box>
-
-            <Typography variant="h4" component="h2" sx={{ mb: 2, fontWeight: 'bold' }}>
-              كن مستعد للتفوق في دراستك!
-            </Typography>
-
-            <Typography variant="h6" sx={{ mb: 4 }}>
-              تعلم وارفع معدّلك من خلال فيديوهات تشرح موادك الدراسية واختبارات قوية مع أفضل المعلمين
-            </Typography>
-
-            <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-              <Button
-                variant="contained"
-                size="large"
-                sx={{
-                  backgroundColor: '#ffd700',
-                  color: '#000',
-                  '&:hover': {
-                    backgroundColor: '#ffed4a',
-                  },
-                  fontSize: '1.1rem',
-                  py: 1.5
-                }}
-                startIcon={<span style={{ marginLeft: 8 }}>🔑</span>}
-              >
-                ادخل مفتاح الاشتراك
-              </Button>
-
-              <Button
-                variant="contained"
-                size="large"
-                sx={{
-                  backgroundColor: 'white',
-                  color: '#1976d2',
-                  '&:hover': {
-                    backgroundColor: '#f5f5f5',
-                  },
-                  fontSize: '1.1rem',
-                  py: 1.5
-                }}
-              >
-                شراء اشتراك جديد
-              </Button>
-            </Box>
-          </Box>
+          <Subscription />
 
         </Box>
       </Container>
