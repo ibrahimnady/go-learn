@@ -10,12 +10,12 @@ import 'swiper/css/navigation';
 import 'swiper/css/effect-coverflow';
 import Grid from '@mui/material/Grid2';
 import Image from 'next/image';
-// import googlePlay from '/public/google.play.svg';
-// import appStore from '/public/appstore.svg';
-// import imageIntro from '/public/homePage.webp';
-// import IMGintro1 from '/public/abwaab-scholarship.svg';
-// import IMGintro2 from '/public/images.jpg';
-// import IMGintro3 from '/public/helpTeacher.jpg';
+import googlePlay from '/public/google.play.svg';
+import appStore from '/public/appstore.svg';
+import imageIntro from '/public/homePage.webp';
+import IMGintro1 from '/public/abwaab-scholarship.svg';
+import IMGintro2 from '/public/images.jpg';
+import IMGintro3 from '/public/helpTeacher.jpg';
 import Subscription from '../Subscription/page';
 
 
@@ -98,12 +98,12 @@ function Intro() {
         <Box sx={{ mt: 8 }}>
           <Grid container sx={{ justifyContent: 'center', alignItems: 'center', width: "100%", }} spacing={2}>
             <Grid item size={{ xs: 12, md: 6 }}>
-              {/* <Image
+              <Image
                 src={imageIntro}
                 alt="Landscape picture"
                 width={800}
                 height={500}
-              /> */}
+              />
             </Grid>
             <Grid item sx={{ textAlign: 'center' }} size={{ xs: 12, md: 6 }}>
               <Box sx={{ display: 'flex', justifyContent: 'center', mt: 8 }}>
@@ -148,20 +148,20 @@ function Intro() {
           <Typography sx={{ textAlign: "center", fontWeight: "bold", }} variant="h5" >حمل التطبيق </Typography>
           <Box sx={{ display: 'flex', justifyContent: 'center' }}>
             <Button>
-              {/* <Image
+              <Image
                 src={googlePlay}
                 alt="Landscape picture"
                 width={200}
                 height={200}
-                /> */}
+              />
             </Button>
             <Button>
-              {/* <Image
+              <Image
                 src={appStore}
                 alt="Landscape picture"
                 width={200}
                 height={200}
-              /> */}
+              />
             </Button>
           </Box>
         </Box>
@@ -241,12 +241,12 @@ function Intro() {
         <Box sx={{ display: 'flex', justifyContent: 'center', mt: 8 }}>
           <Grid container sx={{ width: "100%", justifyContent: 'center', alignItems: 'center', }} spacing={2}>
             <Grid item size={{ xs: 12, md: 6 }}>
-              {/* <Image
+              <Image
                 src={IMGintro1}
                 alt="Landscape picture"
                 width={800}
                 height={500}
-              /> */}
+              />
             </Grid>
             <Grid item size={{ xs: 12, md: 6 }}>
               <Typography sx={{ textAlign: "right", fontWeight: "bold", }} variant="h2" component="h1" gutterBottom>
@@ -272,12 +272,12 @@ function Intro() {
               </Typography>
             </Grid>
             <Grid item size={{ xs: 12, md: 6 }}>
-              {/* <Image
+              <Image
                 src={IMGintro2}
                 alt="Landscape picture"
                 width={800}
                 height={500}
-              /> */}
+              />
             </Grid>
           </Grid>
         </Box>
@@ -287,12 +287,12 @@ function Intro() {
         <Box sx={{ display: 'flex', justifyContent: 'center', mt: 8 }}>
           <Grid container sx={{ width: "100%", justifyContent: 'center', alignItems: 'center' }} spacing={2}>
             <Grid item size={{ xs: 12, md: 6 }}>
-              {/* <Image
+              <Image
                 src={IMGintro3}
                 alt="Landscape picture"
                 width={800}
                 height={500}
-              /> */}
+              />
             </Grid>
             <Grid item size={{ xs: 12, md: 6 }}>
               <Typography sx={{ textAlign: "right", fontWeight: "bold", }} variant="h2" component="h1" gutterBottom>
