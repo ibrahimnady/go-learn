@@ -34,10 +34,11 @@ function Subscription() {
                         variant="contained"
                         size="large"
                         sx={{
-                            backgroundColor: theme.palette.background.bgSubscrbtion,
-                            color: theme.palette.Text.TXTSubscrbtion,
+                            backgroundColor: theme.palette.background.paper,
+                            color: theme.palette.text.primary,
                             '&:hover': {
-                                backgroundColor: '#ffed4a',
+                                backgroundColor: theme.palette.primary.main,
+                                color: '#fff'
                             },
                             fontSize: '1.1rem',
                             py: 1.5
