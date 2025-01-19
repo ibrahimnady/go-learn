@@ -52,4 +52,4 @@ function Subscription() {
     )
 }
 
-export default Subscription
+export default Subscription;

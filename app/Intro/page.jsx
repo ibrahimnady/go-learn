@@ -263,7 +263,7 @@ function Intro() {
           <Grid container sx={{ width: "100%", justifyContent: 'center', alignItems: 'center' }} spacing={2}>
             <Grid item size={{ xs: 12, md: 6 }}>
               <Typography sx={{ textAlign: "right", fontWeight: "bold", }} variant="h2" component="h1" gutterBottom>
-               ميزة الذكاء الاصطناعي
+                ميزة الذكاء الاصطناعي
               </Typography>
               <Typography variant="h4" gutterBottom>
                 نوفر لك مساعد منتور خصيصا لك يساعدك صنع جدول يكون مناسب معاك ومساعدتك في أي مشكلة تخص المواد بتاعك في أسرع وقت واجابتك علي اي سوال
