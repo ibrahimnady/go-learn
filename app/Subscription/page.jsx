@@ -1,3 +1,4 @@
+"use client"
 import React from 'react';
 import { Box, Button, Typography, useTheme } from '@mui/material';
 
@@ -34,8 +35,8 @@ function Subscription() {
                     variant="contained"
                     size="large"
                     sx={{
-                        backgroundColor: theme.palette.background.bgSubscrbtion,
-                        color: theme.palette.Text.TXTSubscrbtion,
+                        backgroundColor: theme.palette.background.bgSubscrbtion || '#ffed4a',
+                        color: theme.palette.Text.TXTSubscrbtion || '#333',
                         '&:hover': {
                             backgroundColor: '#ffed4a',
                         },
