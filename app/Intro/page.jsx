@@ -337,8 +337,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/effect-coverflow';
 import Grid from '@mui/material/Grid2';
 import Subscription from '../Subscription/page';
-import Image from 'next/image'; 
-import imageIntro from '/public/homePage.webp';
+
 
 
 
@@ -418,12 +417,12 @@ function Intro() {
         <Box sx={{ mt: 8 }}>
           <Grid container sx={{ justifyContent: 'center', alignItems: 'center', width: "100%", }} spacing={2}>
             <Grid item size={{ xs: 12, md: 6 }}>
-              <Image
+              {/* <Image
                 src={imageIntro}
                 alt="Landscape picture"
                 width={800}
                 height={500}
-              />
+              /> */}
             </Grid>
             <Grid item sx={{ textAlign: 'center' }} size={{ xs: 12, md: 6 }}>
               <Box sx={{ display: 'flex', justifyContent: 'center', mt: 8 }}>
