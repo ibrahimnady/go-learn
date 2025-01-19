@@ -170,7 +170,7 @@
 //         <div className='container-slider'>
 //           {/* <Typography variant="h3" className="heading" sx={{
 //             fontWeight:"bold",
-            
+
 //             }}>افضل المدرسين </Typography> */}
 //           <Swiper
 //             effect={'coverflow'}
@@ -317,7 +317,7 @@
 //             اشحن محفظتك الان
 //           </Typography>
 //           <Subscription />
-          
+
 //         </Box>
 //       </Container>
 //     </div >
@@ -328,8 +328,6 @@
 'use client'
 import Link from 'next/link'
 import React from 'react'
-// import Typography from '@mui/material/Typography'
-// import { Box } from '@mui/material'
 import { Container, Typography, Box, Button, Card, CardContent, CardMedia, Rating, Toolbar, useTheme } from '@mui/material';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCoverflow, Pagination, Navigation, Autoplay } from 'swiper/modules';
@@ -339,7 +337,8 @@ import 'swiper/css/navigation';
 import 'swiper/css/effect-coverflow';
 import Grid from '@mui/material/Grid2';
 import Subscription from '../Subscription/page';
-
+import Image from 'next/image'; 
+import imageIntro from '/public/homePage.webp';
 
 
 
@@ -416,26 +415,54 @@ function Intro() {
 
 
 
-        <Box sx={{ display: 'flex', justifyContent: 'center', mt: 8 }}>
-          <Typography sx={{
-            fontWeight: "bold",
-            mt: 3,
-            color: theme.palette.Text.TXTHeadline,
-          }} variant="h2" component="h1" gutterBottom>
-            Go Learn
-          </Typography>
-        </Box>
-        <Box sx={{ display: 'flex', justifyContent: 'center', mt: 2 }}>
-          <Link href="/Login">
-            <Button variant="contained" color="primary" sx={{ mr: 2 }}>
-              تسجيل الدخول
-            </Button>
-          </Link>
-          <Link href="/Register">
-            <Button variant="contained" color="secondary">
-              تسجيل طالب جديد
-            </Button>
-          </Link>
+        <Box sx={{ mt: 8 }}>
+          <Grid container sx={{ justifyContent: 'center', alignItems: 'center', width: "100%", }} spacing={2}>
+            <Grid item size={{ xs: 12, md: 6 }}>
+              <Image
+                src={imageIntro}
+                alt="Landscape picture"
+                width={800}
+                height={500}
+              />
+            </Grid>
+            <Grid item sx={{ textAlign: 'center' }} size={{ xs: 12, md: 6 }}>
+              <Box sx={{ display: 'flex', justifyContent: 'center', mt: 8 }}>
+                <Typography sx={{
+                  fontWeight: "bold",
+                  mt: 3,
+                  color: theme.palette.Text.TXTHeadline,
+                }} variant="h1" component="h1" gutterBottom>
+                  Go Learn
+                </Typography>
+              </Box>
+              <Typography sx={{
+                textAlign: "center",
+                fontWeight: "bold",
+                color: theme.palette.Text.TXTHeadline,
+              }} variant="h3" component="h1" gutterBottom>
+                بيئة تعليمية متكاملة
+              </Typography>
+              <Typography sx={{
+                textAlign: "center",
+                fontWeight: "bold",
+                color: theme.palette.Text.TXTHeadline,
+              }} variant="h3" component="h1" gutterBottom>
+                معك خطوة بخطوة لتتفوق
+              </Typography>
+              <Box sx={{ display: 'flex', justifyContent: 'center', mt: 2 }}>
+                <Link href="/Login">
+                  <Button variant="contained" color="primary" sx={{ mr: 2 }}>
+                    تسجيل الدخول
+                  </Button>
+                </Link>
+                <Link href="/Register">
+                  <Button variant="contained" color="secondary">
+                    تسجيل طالب جديد
+                  </Button>
+                </Link>
+              </Box>
+            </Grid>
+          </Grid>
         </Box>
 
 
