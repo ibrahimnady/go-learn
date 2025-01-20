@@ -3,62 +3,66 @@ import React from 'react';
 import { Card, CardContent, Typography, CardMedia, Rating, Button, useTheme } from '@mui/material';
 import Link from 'next/link';
 import Grid from '@mui/material/Grid2';
+import profileTeacher from '/Public/profileTeacher.png';
+import profileTeacher2 from '/Public/profileTeacher2.jpg';
+import profileTeacher3 from '/Public/profileTeacher3.jpg';
+import Image from 'next/image';
 const teachers = [
     // يمكنك إضافة المزيد من المدرسين هنا
     {
         name: 'أحمد محمد',
         price: 'EGP 100',
         lectures: 10,
-        image: 'https://via.placeholder.com/150',
+        image: profileTeacher,
         rating: 4,
     },
     {
-        name: 'سارة علي',
+        name: 'ابراهيم احمد',
         price: 'EGP 100',
         lectures: 12,
-        image: 'https://via.placeholder.com/150',
+        image: profileTeacher2,
         rating: 5,
     },
     {
         name: 'محمد سعيد',
         price: 'EGP 100',
         lectures: 8,
-        image: 'https://via.placeholder.com/150',
+        image: profileTeacher3,
         rating: 3,
     },
     {
-        name: 'فاطمة الزهراء',
+        name: 'عصام علي ',
         price: 'EGP 100',
         lectures: 15,
-        image: 'https://via.placeholder.com/150',
+        image: profileTeacher,
         rating: 4.5,
     },
     {
-        name: 'أحمد محمد',
+        name: 'خالد عبد العزيز',
         price: 'EGP 100',
         lectures: 10,
-        image: 'https://via.placeholder.com/150',
+        image: profileTeacher2,
         rating: 4,
     },
     {
-        name: 'سارة علي',
+        name: 'اسامة محمد',
         price: 'EGP 100',
         lectures: 12,
-        image: 'https://via.placeholder.com/150',
+        image: profileTeacher3,
         rating: 5,
     },
     {
         name: 'محمد سعيد',
         price: 'EGP 100',
         lectures: 8,
-        image: 'https://via.placeholder.com/150',
+        image: profileTeacher,
         rating: 3,
     },
     {
-        name: 'فاطمة الزهراء',
+        name: 'احمد عثمان',
         price: 'EGP 100',
         lectures: 15,
-        image: 'https://via.placeholder.com/150',
+        image: profileTeacher2,
         rating: 4.5,
     },
 ];
@@ -85,13 +89,13 @@ const Teachers = () => {
                                 // backgroundColor: "#ffff",
                             }
                         }}>
-                            <CardMedia
-                                component="img"
-                                height="140"
-                                image={teacher.image}
-                                alt={teacher.name}
-                                sx={{ borderTopLeftRadius: '16px', borderTopRightRadius: '16px',  }}
+                            <Image
+                                src={teacher.image}
+                                alt="Landscape picture"
+                                width={800}
+                                height={500}
                             />
+                            
                             <CardContent sx={{   backgroundColor: theme.palette.background.bgCardTeachers, }}>
                                 <Grid container spacing={2}>
                                     <Grid item xs={4} container direction="column" justifyContent="center">
