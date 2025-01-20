@@ -10,7 +10,7 @@ function SideBar({ drawerWidth, DisplaySidebar, TypeSidebar, HideSidebar }) {
     const location = usePathname();
     const myList = [
         { text: "الرئسية", icon: <InboxIcon />, path: "/Subjects" },
-        // { text: "Subjects", icon: <InboxIcon />, path: "/Intro" },
+        { text: "المحفظة", icon: <InboxIcon />, path: "/Wallet" },
         // { text: "Profiile", icon: <InboxIcon />, path: "/Intro" },
         // { text: "Settings", icon: <InboxIcon />, path: "/" },
     ]
@@ -60,18 +60,19 @@ function SideBar({ drawerWidth, DisplaySidebar, TypeSidebar, HideSidebar }) {
                                             ?
                                             theme.palette.background.bgSidebar
                                             : null,
+                                            
                                     }}
                                     disablePadding
                                 >
                                     <ListItemButton
                                         sx={{
-                                            textAlign: "right"
+                                            textAlign: "right",
                                         }}
                                     >
-
                                         <ListItemText
                                             sx={{
-                                                mr: 2
+                                                mr: 2,
+                                                
                                             }}
                                             primary={item.text} />
                                         <ListItemIcon

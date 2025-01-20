@@ -11,10 +11,12 @@ import { Avatar, Box, Divider, ListItemIcon, Menu, Tooltip, useTheme, Toolbar, A
 import { Logout, Settings } from '@mui/icons-material';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import WalletIcon from '@mui/icons-material/Wallet';
+import NotificationsIcon from '@mui/icons-material/Notifications';
 
 
 function Header({ setmyMode, drawerWidth, ShowSidebar, setLoggin, loggin, DisplaySidebar }) {
-    
+
     const theme = useTheme();
     const [anchorEl, setAnchorEl] = React.useState(null);
     const openAV = Boolean(anchorEl);
@@ -24,14 +26,13 @@ function Header({ setmyMode, drawerWidth, ShowSidebar, setLoggin, loggin, Displa
     const handleClose = () => {
         setAnchorEl(null);
     };
-   
     const logOut = () => {
         localStorage.removeItem("isLoggedIn");
         setLoggin(false)
         // console.log("test")
-        
-        
-        
+
+
+
     }
     const handleLogin = () => {
         localStorage.setItem("isLoggedIn", "true"); // حفظ الحالة في localStorage
@@ -69,12 +70,13 @@ function Header({ setmyMode, drawerWidth, ShowSidebar, setLoggin, loggin, Displa
                                     aria-haspopup="true"
                                     aria-expanded={openAV ? 'true' : undefined}
                                 >
-                                    <Typography sx={{fontWeight: "bold"}} mr={2} variant="body1" ><ArrowDropDownIcon /> Ibrahim Nady</Typography>
+                                    <Typography sx={{ fontWeight: "bold" }} mr={2} variant="body1" ><ArrowDropDownIcon /> Ibrahim Nady</Typography>
                                     <Avatar sx={{ width: 32, height: 32 }} src="https://mui.com/static/images/avatar/1.jpg" />
                                 </IconButton>
+
                             ) : (
-                                    <Link href="/Subjects">
-                                        <Button color="inherit" onClick={handleLogin}>Sign In</Button>
+                                <Link href="/Subjects">
+                                    <Button color="inherit" onClick={handleLogin}>Sign In</Button>
                                 </Link>
                             )
 
@@ -87,7 +89,22 @@ function Header({ setmyMode, drawerWidth, ShowSidebar, setLoggin, loggin, Displa
                             }} variant="" >
                                 {theme.palette.mode === "dark" ? <Brightness4Icon color='warning' /> : <Brightness7Icon />}
                             </Button>
+                                <NotificationsIcon sx={{ mr: 2 }} />
                         </Tooltip>
+                        {loggin ? (
+                            <Box>
+                                <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
+                                    <Link href="/Wallet">
+                                        <WalletIcon />
+                                    </Link>
+                                    <Typography sx={{ fontWeight: "bold", pl: 1 }}>0 EGP</Typography>
+                                </Box>
+                            </Box>
+                        ) : (
+                            null
+                        )
+                        }
+
                     </Box>
                     <Menu
                         anchorEl={anchorEl}

@@ -27,6 +27,8 @@ const ThemeMode = (mode) => ({
                     bgCardSubjects:"#A0E9FF",
                     bgCardTeachers:"#CDF5FD",
                     bgContant:"#ffffff",
+                    bgWallet: "#1976d2",
+                    bgWalletButton: "#1976d2",
                 },
                 Text: {
                     main: "#333333",
@@ -38,6 +40,7 @@ const ThemeMode = (mode) => ({
                     TXTCardSubjects: "#333333",
                     TXTCardTeachers: "#333333",
                     TXTContant: "#333333",
+                    TXTWallet: "#ffffff",
                 },
 
             }
@@ -64,6 +67,7 @@ const ThemeMode = (mode) => ({
                     bgCardSubjects: "#009f5d",
                     bgCardTeachers: "#044343",
                     bgContant: "#333333",
+                    bgWallet: "#333333",
                 },
                 Text: {
                     main: "#ffffff",
@@ -75,6 +79,7 @@ const ThemeMode = (mode) => ({
                     TXTCardSubjects: "#ffffff",
                     TXTCardTeachers: "#ffffff",
                     TXTContant: "#ffffff",
+                    TXTWallet: "#ffffff",
                 },
 
             }),
