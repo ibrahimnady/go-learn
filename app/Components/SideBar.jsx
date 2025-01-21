@@ -1,17 +1,12 @@
 'use client';
 import React from 'react'
-import { Divider, Drawer, ListItem, ListItemButton, ListItemIcon, ListItemText, Toolbar, useTheme, Typography, Box, Button, Tooltip, IconButton, Avatar, Menu } from '@mui/material'
+import { Divider, Drawer, ListItem, ListItemButton, ListItemIcon, ListItemText, Toolbar, useTheme, Typography, Box, Tooltip, Avatar, } from '@mui/material'
 import InboxIcon from '@mui/icons-material/Inbox';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Logout, Settings } from '@mui/icons-material';
+import { Logout } from '@mui/icons-material';
 import Grid from '@mui/material/Grid2';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-import WalletIcon from '@mui/icons-material/Wallet';
-import NotificationsIcon from '@mui/icons-material/Notifications';
-import Brightness4Icon from '@mui/icons-material/Brightness4';
-import Brightness7Icon from '@mui/icons-material/Brightness7';
+
 
 function SideBar({ drawerWidth, DisplaySidebar, TypeSidebar, HideSidebar, loggin, setLoggin }) {
     const theme = useTheme();
@@ -22,8 +17,8 @@ function SideBar({ drawerWidth, DisplaySidebar, TypeSidebar, HideSidebar, loggin
         // { text: "تسجيل الخروج", icon: <Logout />, path: "/Intro" },
         // { text: "Settings", icon: <InboxIcon />, path: "/" },
     ]
-    const [anchorEl, setAnchorEl] = React.useState(null);
-  
+
+
     const logOut = () => {
         localStorage.removeItem("isLoggedIn");
         setLoggin(false)
@@ -73,14 +68,14 @@ function SideBar({ drawerWidth, DisplaySidebar, TypeSidebar, HideSidebar, loggin
                                     <Typography sx={{ fontWeight: "bold" }} mr={2} variant="body1">
                                         Ibrahim
                                     </Typography>
-                                    
+
                                     <Avatar sx={{ width: 32, height: 32 }} src="https://mui.com/static/images/avatar/1.jpg" />
                                 </Box>
                                 <Box sx={{ display: 'flex', justifyContent: { xs: 'center', md: 'center' }, alignItems: 'center' }}>
                                     <Typography sx={{ fontWeight: "bold" }} mr={2} variant="body1">
                                         علمي علوم , ثالثه ثانوي
                                     </Typography>
-                                    
+
                                 </Box>
                             </Tooltip>
                         </Grid>

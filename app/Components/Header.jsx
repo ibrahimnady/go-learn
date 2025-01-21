@@ -7,27 +7,18 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Link from 'next/link';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
-import { Avatar, Box, Divider, ListItemIcon, Menu, Tooltip, useTheme, Toolbar, AppBar, ListItemText, ListItem, ListItemButton } from '@mui/material';
-import { Logout, Settings } from '@mui/icons-material';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import {Box, Tooltip, useTheme, Toolbar, AppBar } from '@mui/material';
 import WalletIcon from '@mui/icons-material/Wallet';
-import NotificationsIcon from '@mui/icons-material/Notifications';
 import Grid from '@mui/material/Grid2';
 
 
-function Header({ setmyMode, drawerWidth, ShowSidebar, setLoggin, loggin, DisplaySidebar }) {
+function Header({ setmyMode, ShowSidebar, setLoggin, loggin, DisplaySidebar }) {
 
     const theme = useTheme();
     const handleLogin = () => {
         localStorage.setItem("isLoggedIn", "true")
         setLoggin(true);
     };
-    const myList = [
-        { text: "الصفحة الشخصية", icon: <AccountCircleIcon />, path: "/" },
-        { text: "الاعدادات", icon: <Settings />, path: "/" },
-
-    ]
 
     return (
         <div>
