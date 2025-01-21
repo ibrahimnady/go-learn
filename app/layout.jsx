@@ -88,6 +88,8 @@ export default function RootLayout({ children }) {
                   DisplaySidebar={DisplaySidebar}
                   TypeSidebar={TypeSidebar}
                   HideSidebar={HideSidebar}
+                  setLoggin={setLoggin}
+                  loggin={loggin}
                 />
                 <Box
                   sx={{
