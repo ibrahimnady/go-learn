@@ -11,6 +11,9 @@ import Header from "./Components/Header";
 import { Box } from '@mui/material';
 import ThemeMode from './MyTheme';
 import { useRouter } from 'next/navigation';
+import Login from './Login/page';
+import Intro from './Intro/page';
+import Home from './page';
 
 const drawerWidth = 240;
 const cairo = Cairo({
@@ -99,19 +102,14 @@ export default function RootLayout({ children }) {
                   }} >
                   {children}
                 </Box>
-                {/* <Footer /> */}
               </div>
               :
               <div className="main-content">
-                {/* <Footer />  */}
                 <Box
                   sx={{
                     // mr: { sm: `${drawerWidth}px` },
                     // display: 'flex',
                     marginBottom: 5
-
-
-
                   }}>
                   {children}
                 </Box>

@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
 import Link from 'next/link'
-import { Container, Typography, Box, Button, Card, CardContent, CardMedia, Rating, Toolbar, useTheme } from '@mui/material';
+import { Container, Typography, Box, Button, Card, CardContent, CardMedia, Rating, Toolbar, useTheme, Stack, Paper } from '@mui/material';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCoverflow, Pagination, Navigation, Autoplay } from 'swiper/modules';
 import 'swiper/css';
@@ -20,6 +20,8 @@ import Subscription from '../Subscription/page';
 import profileTeacher from '/Public/profileTeacher.png';
 import profileTeacher2 from '/Public/profileTeacher2.jpg';
 import profileTeacher3 from '/Public/profileTeacher3.jpg';
+import TrapFocus from '@mui/material/Unstable_TrapFocus';
+import Fade from '@mui/material/Fade';
 
 
 
@@ -84,6 +86,11 @@ const teachers = [
 
 
 function Intro() {
+  const [bannerOpen, setBannerOpen] = React.useState(true);
+
+  const closeBanner = () => {
+    setBannerOpen(false);
+  };
   const theme = useTheme();
   return (
     <div>
@@ -321,6 +328,64 @@ function Intro() {
 
         </Box>
       </Container>
+      <TrapFocus open disableAutoFocus disableEnforceFocus>
+        <Fade appear={false} in={bannerOpen}>
+          <Paper
+            role="dialog"
+            aria-modal="false"
+            aria-label="Cookie banner"
+            square
+            variant="outlined"
+            tabIndex={-1}
+            sx={{
+              position: 'fixed',
+              zIndex: 2,
+              bottom: 0,
+              left: 0,
+              right: 0,
+              m: 0,
+              p: 2,
+              borderWidth: 0,
+              borderTopWidth: 1,
+              bgcolor: theme.palette.background.bgAlertDown,
+            }}
+          >
+            <Stack
+              direction={{ xs: 'column', sm: 'row' }}
+              sx={{ justifyContent: 'space-between', gap: 2 }}
+            >
+              <Box
+                sx={{ flexShrink: 1, alignSelf: { xs: 'flex-start', sm: 'center' } }}
+              >
+                <Typography sx={{ fontWeight: 'bold' }}>
+                  This website uses cookies
+                </Typography>
+                <Typography variant="body2">
+                  example.com relies on cookies to improve your experience.
+                </Typography>
+              </Box>
+              <Stack
+                direction={{
+                  xs: 'row-reverse',
+                  sm: 'row',
+                }}
+                sx={{
+                  gap: 2,
+                  flexShrink: 0,
+                  alignSelf: { xs: 'flex-end', sm: 'center' },
+                }}
+              >
+                <Button sx={{bgcolor: theme.palette.background.bgButton}} size="small" onClick={closeBanner} variant="contained">
+                  Allow all
+                </Button>
+                <Button sx={{ bgcolor: theme.palette.background.bgButton }} size="small" onClick={closeBanner} variant="contained">
+                  Reject all
+                </Button>
+              </Stack>
+            </Stack>
+          </Paper>
+        </Fade>
+      </TrapFocus>
     </div >
   );
 }

@@ -230,7 +230,7 @@ const Contant = () => {
             {sections.map((section, index) => (
                 <Accordion key={index} disabled={section.status} expanded={expanded === `panel${index + 1}`}
                     onChange={handleChange(`panel${index + 1}`)}>
-                    <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                    <AccordionSummary  expandIcon={<ExpandMoreIcon />}>
                         <Typography variant="h5">{section.title}</Typography>
                     </AccordionSummary>
                     <AccordionDetails>

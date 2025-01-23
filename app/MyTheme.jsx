@@ -29,6 +29,7 @@ const ThemeMode = (mode) => ({
                     bgContant:"#ffffff",
                     bgWallet: "#1976d2",
                     bgWalletButton: "#1976d2",
+                    bgAlertDown: "#667BC6",
                 },
                 Text: {
                     main: "#333333",
@@ -68,6 +69,7 @@ const ThemeMode = (mode) => ({
                     bgCardTeachers: "#044343",
                     bgContant: "#333333",
                     bgWallet: "#333333",
+                    bgAlertDown: "#fd9c33",
                 },
                 Text: {
                     main: "#ffffff",
