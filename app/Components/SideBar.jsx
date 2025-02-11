@@ -14,18 +14,12 @@ function SideBar({ drawerWidth, DisplaySidebar, TypeSidebar, HideSidebar, loggin
     const myList = [
         { text: "الرئسية", icon: <InboxIcon />, path: "/Subjects" },
         { text: "المحفظة", icon: <InboxIcon />, path: "/Wallet" },
-        // { text: "تسجيل الخروج", icon: <Logout />, path: "/Intro" },
-        // { text: "Settings", icon: <InboxIcon />, path: "/" },
     ]
 
 
     const logOut = () => {
         localStorage.removeItem("isLoggedIn");
         setLoggin(false)
-        // console.log("test")
-
-
-
     }
 
 

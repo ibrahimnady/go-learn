@@ -22,6 +22,7 @@ import profileTeacher2 from '/Public/profileTeacher2.jpg';
 import profileTeacher3 from '/Public/profileTeacher3.jpg';
 import TrapFocus from '@mui/material/Unstable_TrapFocus';
 import Fade from '@mui/material/Fade';
+import Footer from '../Components/Footer';
 
 
 
@@ -328,6 +329,7 @@ function Intro() {
 
         </Box>
       </Container>
+
       <TrapFocus open disableAutoFocus disableEnforceFocus>
         <Fade appear={false} in={bannerOpen}>
           <Paper
@@ -375,7 +377,7 @@ function Intro() {
                   alignSelf: { xs: 'flex-end', sm: 'center' },
                 }}
               >
-                <Button sx={{bgcolor: theme.palette.background.bgButton}} size="small" onClick={closeBanner} variant="contained">
+                <Button sx={{ bgcolor: theme.palette.background.bgButton }} size="small" onClick={closeBanner} variant="contained">
                   Allow all
                 </Button>
                 <Button sx={{ bgcolor: theme.palette.background.bgButton }} size="small" onClick={closeBanner} variant="contained">

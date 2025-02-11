@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
@@ -7,31 +6,29 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Link from 'next/link';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
-import {Box, Tooltip, useTheme, Toolbar, AppBar } from '@mui/material';
+import { Box, Tooltip, useTheme, Toolbar, AppBar } from '@mui/material';
 import WalletIcon from '@mui/icons-material/Wallet';
 import Grid from '@mui/material/Grid2';
 
 
-function Header({ setmyMode, ShowSidebar, setLoggin, loggin, DisplaySidebar }) {
 
+function Header({ setmyMode, ShowSidebar, setLoggin, loggin, DisplaySidebar }) {
     const theme = useTheme();
     const handleLogin = () => {
         localStorage.setItem("isLoggedIn", "true")
         setLoggin(true);
     };
-
     return (
+
         <div>
             <AppBar
                 sx={{
-                    // width: { sm: `calc(100% - ${drawerWidth}px)` }, mr: { xs: 0, sm: `${drawerWidth}px` },
+
                     position: "fixed",
                     zIndex: (theme) => theme.zIndex.drawer + 1,
                     bgcolor: theme.palette.background.main,
                     color: theme.palette.Text.main
                 }}
-                position="static"
-
             >
                 <Toolbar>
 
@@ -55,7 +52,6 @@ function Header({ setmyMode, ShowSidebar, setLoggin, loggin, DisplaySidebar }) {
                                         <Button color="inherit" onClick={handleLogin}>Sign In</Button>
                                     </Link>
                                 )}
-
                             </Tooltip>
                         </Grid>
                         <Grid item size={{ xs: 3, md: 10 }} sx={{ display: 'flex', justifyContent: { xs: 'flex-end', md: 'flex-start' }, alignItems: 'center' }}>
@@ -68,13 +64,6 @@ function Header({ setmyMode, ShowSidebar, setLoggin, loggin, DisplaySidebar }) {
                                 </Button>
                             </Box>
                         </Grid>
-                        {loggin ? (
-                            <Grid item size={{ xs: 3, md: 3 }}>
-
-                            </Grid>
-                        ) : (
-                            null
-                        )}
                     </Grid>
 
 
@@ -92,6 +81,7 @@ function Header({ setmyMode, ShowSidebar, setLoggin, loggin, DisplaySidebar }) {
                     </IconButton>
                 </Toolbar>
             </AppBar>
+            );
         </div>
     )
 }
