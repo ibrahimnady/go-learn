@@ -117,8 +117,8 @@ export default function RootLayout({ children }) {
                       // display: 'flex',
                       marginBottom: 5
                     }}>
-                    <Home />
-                    {/* {children} */}
+                    {/* <Home /> */}
+                    {children}
                   </Box>
                   <div className="footer-container">
                     <Footer />

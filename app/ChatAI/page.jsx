@@ -39,6 +39,7 @@ const ChatAI = () => {
                     إرسال
                 </Button>
             </Box>
+            
         </Container>
     );
 };
