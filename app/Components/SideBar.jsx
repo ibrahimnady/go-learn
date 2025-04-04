@@ -1,7 +1,12 @@
 'use client';
 import React from 'react'
 import { Divider, Drawer, ListItem, ListItemButton, ListItemIcon, ListItemText, Toolbar, useTheme, Typography, Box, Tooltip, Avatar, } from '@mui/material'
-import InboxIcon from '@mui/icons-material/Inbox';
+import MailIcon from '@mui/icons-material/Mail';
+import MenuBookIcon from '@mui/icons-material/MenuBook';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import PersonIcon from '@mui/icons-material/Person';
+import WalletIcon from '@mui/icons-material/Wallet';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Logout } from '@mui/icons-material';
@@ -12,8 +17,12 @@ function SideBar({ drawerWidth, DisplaySidebar, TypeSidebar, HideSidebar, loggin
     const theme = useTheme();
     const location = usePathname();
     const myList = [
-        { text: "الرئسية", icon: <InboxIcon />, path: "/Subjects" },
-        { text: "المحفظة", icon: <InboxIcon />, path: "/Wallet" },
+        { text: "المواد", icon: <MenuBookIcon />, path: "/Subjects" },
+        { text: "مشترياتي ", icon: <ShoppingCartIcon />, path: "/Pruches" },
+        { text: "المفضلة ", icon: <FavoriteIcon />, path: "/Favorite" },
+        { text: "الصفحة الشخصية", icon: <PersonIcon />, path: "/Profile" },
+        { text: "المحفظة", icon: <WalletIcon />, path: "/Wallet" },
+        { text: "الرسائل", icon: <MailIcon />, path: "/Inbox" },
     ]
 
 

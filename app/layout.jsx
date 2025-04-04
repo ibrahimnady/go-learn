@@ -9,13 +9,13 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { useState } from "react";
 import Header from "./Components/Header";
 import { Box } from '@mui/material';
-import ThemeMode from './MyTheme';
+import ThemeMode from './utils/MyTheme';
 import { useRouter } from 'next/navigation';
 import { Provider } from 'react-redux';
 import store from './redux/store';
 
 import Home from './page';
-import Subjects from './Subjects/page';
+import Subjects from './(SystemPage)/Subjects/page';
 
 
 const drawerWidth = 240;
