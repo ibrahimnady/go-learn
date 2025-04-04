@@ -15,7 +15,7 @@ import { Provider } from 'react-redux';
 import store from './redux/store';
 
 import Home from './page';
-import Subjects from './(SystemPage)/Subjects/page';
+import Subjects from './Subjects/page';
 
 
 const drawerWidth = 240;
