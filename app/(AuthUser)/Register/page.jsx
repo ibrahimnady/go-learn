@@ -1,6 +1,6 @@
 'use client'
 import React, { useState } from 'react';
-import { Container, TextField, Button, Typography, Box, Autocomplete } from '@mui/material';
+import { Container, TextField, Button, Typography, Box, Autocomplete, Avatar } from '@mui/material';
 import Link from 'next/link';
 import Grid from '@mui/material/Grid2';
 function Register() {
@@ -40,6 +40,7 @@ function Register() {
                     <Typography component="h1" variant="h5">
                         تسجيل طالب جديد
                     </Typography>
+                    <Avatar variant="h1" sx={{ m: 1, bgcolor: 'secondary.main', width: 80, height: 80 }} />
                     <Box component="form" noValidate sx={{ mt: 1 }}>
                         <Grid container spacing={2}>
                             <Grid item size={{ xs: 12, sm: 6 }}>
@@ -159,18 +160,31 @@ function Register() {
                             </Grid>
                             <Grid item size={{ xs: 12, sm: 6 }}>
                                 <Autocomplete
-                                    options={educationType === 'الأزهر' && academicYear.includes('ثانوي') ? azharSections :
-                                        educationType === 'تربية وتعليم' && academicYear.includes('ثانوي') ? educationSections : []}
+                                    options={
+                                        educationType === 'الأزهر' && (academicYear === 'ثاني ثانوي' || academicYear === 'ثالث ثانوي')
+                                            ? ['علمي', 'أدبي'] // الأزهر: ثاني ثانوي أو ثالث ثانوي
+                                            : educationType === 'تربية وتعليم' && academicYear === 'أولي ثانوي'
+                                                ? ['علمي', 'أدبي'] // تربية وتعليم: أولى ثانوي
+                                                : educationType === 'تربية وتعليم' && (academicYear === 'ثاني ثانوي' || academicYear === 'ثالث ثانوي')
+                                                    ? ['علمي علوم', 'علمي رياضة', 'أدبي'] // تربية وتعليم: ثاني ثانوي أو ثالث ثانوي
+                                                    : []  // الخيارات الافتراضية
+                                    }
                                     renderInput={(params) => (
                                         <TextField {...params} label="نوع القسم" margin="normal" required fullWidth />
                                     )}
                                     value={sectionType}
                                     onChange={(event, newValue) => setSectionType(newValue)}
-                                    disabled={!educationType}
+                                    disabled={
+                                        !educationType || // تعطيل إذا لم يتم اختيار نوع التعليم
+                                        !academicYear || // تعطيل إذا لم يتم اختيار السنة الدراسية
+                                        academicYear === 'أولي إعدادي' || // تعطيل إذا كانت السنة أولي إعدادي
+                                        academicYear === 'ثاني إعدادي' || // تعطيل إذا كانت السنة ثاني إعدادي
+                                        academicYear === 'ثالث إعدادي' // تعطيل إذا كانت السنة ثالث إعدادي
+                                    }
                                 />
                             </Grid>
                         </Grid>
-                        <Link href="/Login">
+                        <Link href="/">
                             <Button
                                 type="submit"
                                 fullWidth
