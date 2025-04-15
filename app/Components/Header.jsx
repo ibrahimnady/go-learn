@@ -145,7 +145,7 @@ function Header({ }) {
                                 color="inherit"
                                 component={Link}
                                 sx={{ mx: 1 }}
-                                href="/Login"
+                                href="/Intro"
                                 onClick={handleLogout}
                             >
                                 تسجيل الخروج
