@@ -61,9 +61,10 @@ body {
 } */
 }
 .main-content {
-  min-height: 100vh; /* يجعل المحتوى الرئيسي يأخذ المساحة الكاملة للصفحة */
-  display: flex;
-  flex-direction: column;
+  min-height: fit-content; /* يجعل المحتوى الرئيسي يأخذ المساحة الكاملة للصفحة */
+    /* display: flex;
+    flex-direction: column; */
+  
 }
 
 .footer-container {

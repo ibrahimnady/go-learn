@@ -50,6 +50,10 @@ const { isLoggedIn, loading, error } = useSelector((state) => state.login); // Ø
             flexDirection: 'column',
             alignItems: 'center',
             mt: 8,
+            height: '100vh',
+            display: 'flex',
+            justifyContent: 'center',
+            
           }}
         >
           <Typography component="h1" variant="h5">
