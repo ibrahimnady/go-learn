@@ -47,9 +47,7 @@ const Favorite = () => {
     const theme = useTheme();
     return (
         <div>
-            <head>
                 <title>Go Learn | Favorite </title>
-            </head>
             <Grid container spacing={2} style={{ padding: '20px', marginTop: '50px' }}>
 
         

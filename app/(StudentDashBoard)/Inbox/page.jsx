@@ -8,9 +8,9 @@ const Inbox = () => {
     const theme = useTheme();
     return (
         <div>
-            <head>
+            
                 <title>Go Learn | Inbox </title>
-            </head>
+            
             <Grid container spacing={2} justifyContent="center" alignItems="center"
                 sx={{ marginTop: '80px', }}>
                 <div>hello inbox</div>

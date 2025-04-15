@@ -95,9 +95,9 @@ function Intro() {
   const theme = useTheme();
   return (
     <div>
-      <head>
+
         <title>Go Learn | Intro</title>
-      </head>
+
 
       <Container component="main" maxWidth="100%" sx={{ textAlign: 'right' }}>
         <Box sx={{ mt: 8 }}>
@@ -330,7 +330,7 @@ function Intro() {
         </Box>
       </Container>
 
-      <TrapFocus open disableAutoFocus disableEnforceFocus>
+      {/* <TrapFocus open disableAutoFocus disableEnforceFocus>
         <Fade appear={false} in={bannerOpen}>
           <Paper
             role="dialog"
@@ -387,7 +387,8 @@ function Intro() {
             </Stack>
           </Paper>
         </Fade>
-      </TrapFocus>
+      </TrapFocus> */}
+      
     </div >
   );
 }

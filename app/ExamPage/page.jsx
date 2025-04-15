@@ -25,9 +25,9 @@ const ExamPage = () => {
 
     return (
         <div >
-            <head>
+
                 <title>Go Learn | Exam</title>
-            </head>
+
             <Container component="main" maxWidth="lg" sx={{ marginTop: '20px' }}>
                 <Typography variant="h4" component="h1" gutterBottom>
                     امتحان الدرس

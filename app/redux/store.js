@@ -1,10 +1,13 @@
-// redux/store.js
 import { configureStore } from '@reduxjs/toolkit';
-import authReducer from './slices/authSlice';
+import registerReducer from './slices/registerSlice';
+import loginReducer from './slices/loginSlice';
+import themeReducer from "./slices/themeSlice";
 
 export const store = configureStore({
     reducer: {
-        auth: authReducer, // إضافة Slice الخاص بحالة تسجيل الدخول
+        register: registerReducer, // إضافة Slice الخاص بحالة تسجيل الدخول
+        login: loginReducer, // إضافة Slice الخاص بحالة تسجيل الدخول
+        theme: themeReducer,
     },
 });
 

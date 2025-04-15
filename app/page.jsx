@@ -1,19 +1,36 @@
-"use client"
-import React from 'react';
+"use client";
+import React, { useEffect, useMemo, useState } from "react";
+import { Inter, Cairo } from "next/font/google";
+import "./Styles/globals.css";
 import Intro from "./Intro/page";
-import { useDispatch, useSelector } from 'react-redux';
-import { logout, logIn } from './redux/slices/authSlice';
 
+
+
+const cairo = Cairo({
+  subsets: ["latin"],
+  weight: ["400", "700"], // يمكنك تحديد الأوزان التي تريدها
+});
 
 export default function Home() {
-  const dispatch = useDispatch();
-  const data = useSelector((state) => state.auth);
+
+
+
   return (
-    <div>
 
-      <Intro />
-      <div>{data.loggedIn ? "true" : "false"}</div>
+    <html lang="ar" className={cairo.className}>
+      <head>
+        <title>Go Learn</title>
+      </head>
+      <body>
+        <div>
+          
+        </div>
+       <Intro/>
 
-    </div>
+
+      </body>
+    </html>
+
   );
+
 }

@@ -34,9 +34,9 @@ const Profile = () => {
     const theme = useTheme();
     return (
         <div>
-            <head>
+            
                 <title>Go Learn | Profile </title>
-            </head>
+            
             <Container component="main" maxWidth="lg">
                 <Box
                     sx={{

@@ -71,9 +71,9 @@ const Teachers = () => {
     const theme = useTheme();
     return (
         <div>
-            <head>
+ 
                 <title>Go Learn | Teachers</title>
-            </head>
+
             <Grid container spacing={2} style={{ padding: '20px', marginTop: '50px' }}>
                 {teachers.map((teacher, index) => (
                     <Grid item size={{ xs: 12, sm: 12, md: 6, lg: 3 }} key={index}>

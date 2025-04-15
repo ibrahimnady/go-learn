@@ -1,135 +1,61 @@
 'use client'
-import React, { useEffect, useMemo } from 'react'
-import { Inter, Cairo } from 'next/font/google';
+import React, { useEffect, useState } from 'react'
 import "./Styles/globals.css";
-import SideBar from "./Components/SideBar";
-import Footer from "./Components/Footer";
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-import CssBaseline from '@mui/material/CssBaseline';
-import { useState } from "react";
-import Header from "./Components/Header";
+import { Provider, useDispatch, useSelector } from "react-redux";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import ThemeMode from "./utils/MyTheme";
+import CssBaseline from "@mui/material/CssBaseline";
+import store from "./redux/store";
+import Cookies from "js-cookie";
+import { setTheme } from "./redux/slices/themeSlice";
+import Header from './Components/Header';
 import { Box } from '@mui/material';
-import ThemeMode from './utils/MyTheme';
-import { useRouter } from 'next/navigation';
-import { Provider } from 'react-redux';
-import store from './redux/store';
-
-import Home from './page';
-import Subjects from './Subjects/page';
-
-
-const drawerWidth = 240;
-const cairo = Cairo({
-  subsets: ['latin'],
-  weight: ['400', '700'], // يمكنك تحديد الأوزان التي تريدها
-});
-
+import Footer from './Components/Footer';
 
 export default function RootLayout({ children }) {
-
-  const router = useRouter();
-  // const [mode, setmyMode] = useState("dark");
-  // const [mode, setmyMode] = useState(localStorage.getItem("currentMode") === null ? "light" : localStorage.getItem("currentMode") === "light" ? "light" : "dark");
-  const [mode, setmyMode] = useState(() => {
-    try {
-      const storedMode = localStorage.getItem("currentMode");
-      return storedMode !== null ? storedMode : "light";
-    } catch (error) {
-      // console.error(error);
-      return "light";
-    }
-  });
-  // const [loggin, setLoggin] = useState("fales");
-  // const [loggin, setLoggin] = useState(localStorage.getItem("isLoggedIn") === "true");
-  const [loggin, setLoggin] = useState(() => {
-    try {
-      const isLoggedIn = localStorage.getItem("isLoggedIn");
-      return isLoggedIn !== null && isLoggedIn === "true" ? true : false;
-    } catch (error) {
-      // console.error(error);
-      return false;
-    }
-  });
-  // useEffect(() => {
-  //   if (loggin === false) {
-  //     router.push('/Intro'); // إعادة التوجيه إلى صفحة Intro بعد تسجيل الخروج
-  //   }
-  // }, [loggin]);
-
-  const [DisplaySidebar, setDisplaySidebar] = useState("none");
-  const [TypeSidebar, setTypeSidebar] = useState("permanent");
-  const theme = useMemo(() => createTheme(ThemeMode(mode)), [mode]);
-
-  const ShowSidebar = () => {
-    setTypeSidebar("temporary")
-    setDisplaySidebar("block")
-  }
-  const HideSidebar = () => {
-    setTypeSidebar("permanent")
-    setDisplaySidebar("none")
-  }
-
   return (
-    <html lang="ar" className={cairo.className}>
+    <html lang="ar">
       <head>
         <title>Go Learn</title>
       </head>
       <body>
         <Provider store={store}>
-          <ThemeProvider theme={theme}>
-            <CssBaseline />
-
-            <Header
-              setmyMode={setmyMode}
-              drawerWidth={drawerWidth}
-              ShowSidebar={ShowSidebar}
-              setLoggin={setLoggin}
-              loggin={loggin}
-              DisplaySidebar={DisplaySidebar}
-            />
-            {
-              loggin === true
-                ?
-                <div className="main-content">
-                  <SideBar
-                    drawerWidth={drawerWidth}
-                    DisplaySidebar={DisplaySidebar}
-                    TypeSidebar={TypeSidebar}
-                    HideSidebar={HideSidebar}
-                    setLoggin={setLoggin}
-                    loggin={loggin}
-                  />
-                  <Box
-                    sx={{
-                      mr: { sm: `${drawerWidth}px` },
-                      display: 'flex',
-                      justifyContent: 'center',
-                    }} >
-                    {children}
-                    
-                  </Box>
-                </div>
-                :
-                <div className="main-content">
-                  <Box
-                    sx={{
-                      // mr: { sm: `${drawerWidth}px` },
-                      // display: 'flex',
-                      marginBottom: 5
-                    }}>
-                    {/* <Home /> */}
-                    {children}
-                  </Box>
-                  <div className="footer-container">
-                    <Footer />
-                  </div>
-                  {/* <Login/> */}
-                </div>
-            }
-          </ThemeProvider>
+          <ReduxWrapper>{children}</ReduxWrapper>
         </Provider>
-
       </body>
     </html>
+  );
+}
+
+function ReduxWrapper({ children }) {
+  const dispatch = useDispatch();
+  const mode = useSelector((state) => state.theme.mode); // قراءة الثيم من Redux
+  const [isClient, setIsClient] = useState(false); // حالة لتحديد إذا كان العميل قد تم تحميله
+  const theme = createTheme(ThemeMode(mode)); // إنشاء الثيم بناءً على الوضع الحالي
+  const isLoggedIn = useSelector((state) => state.login.isLoggedIn); // قراءة حالة تسجيل الدخول من Redux
+  useEffect(() => {
+    setIsClient(true); // تعيين أن العميل قد تم تحميله
+    const savedMode = Cookies.get("themeMode") || "light";
+    dispatch(setTheme(savedMode)); // تحديث الثيم في Redux بناءً على الكوكيز
+  }, [dispatch]);
+  if (!isClient) {
+    // أثناء SSR، قم بإرجاع مكون فارغ أو حالة تحميل
+    return null;
+  }
+
+  return (
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Header />
+        <div className="main-content">
+          <Box sx={{mb: 5}}>
+          {children}
+          </Box>
+          {!isLoggedIn ? (
+            <Footer/>
+          ):(null)}
+        </div>
+      
+    </ThemeProvider>
   );
 }

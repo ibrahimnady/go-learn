@@ -5,9 +5,7 @@ import { Container, Typography, Box } from '@mui/material';
 const VideoPage = () => {
     return (
         <div style={{width: "100%"}}>
-            <head>
                 <title>Go Learn | Video</title>
-            </head>
             <Container component="main" maxWidth="lg" sx={{ marginTop: '65px' }}>
                 <Typography sx={{ marginTop: '65px', textAlign: "center" }} variant="h4" component="h1" gutterBottom>
                     اسم الدرس

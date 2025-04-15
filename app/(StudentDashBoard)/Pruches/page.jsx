@@ -9,11 +9,10 @@ const Pruches = () => {
     const theme = useTheme();
     return (
         <div style={{ width: '100%', }}>
-            <head>
+            
                 <title>Go Learn | Pruches </title>
-            </head>
+            
             <Contant/>
-           
         </div>
     )
 }
