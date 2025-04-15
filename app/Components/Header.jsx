@@ -30,7 +30,7 @@ function Header({ }) {
         dispatch(logout()); // تحديث حالة تسجيل الخروج في Redux
 
     };
-    console.log(isLoggedIn);
+    // console.log(isLoggedIn);
 
     const [mobileMenuAnchorEl, setMobileMenuAnchorEl] = useState(null);
 
@@ -80,12 +80,13 @@ function Header({ }) {
                                     color="inherit"
                                     component={Link}
                                     href={tab.path}
-                                    sx={{ mx: 1,
+                                    sx={{
+                                        mx: 1,
                                         bgcolor: location === tab.path
                                             ?
                                             theme.palette.background.bgSidebar
                                             : null,
-                                     }}
+                                    }}
                                 >
                                     {tab.text}
                                 </Button>
@@ -183,9 +184,8 @@ function Header({ }) {
 
 
             </AppBar>
-            );
         </div>
-    )
+    );
 }
 
 export default Header

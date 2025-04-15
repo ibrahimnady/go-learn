@@ -23,14 +23,10 @@ export default function Home() {
       </head>
       <body>
         <div>
-          
+          <Intro />
         </div>
-       <Intro/>
-
-
       </body>
     </html>
-
   );
 
 }

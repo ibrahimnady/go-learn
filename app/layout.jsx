@@ -47,15 +47,14 @@ function ReduxWrapper({ children }) {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Header />
-        <div className="main-content">
-          <Box sx={{mb: 5}}>
+        <div className="">
+          <Box sx={{mb:5}}>
           {children}
           </Box>
           {!isLoggedIn ? (
             <Footer/>
           ):(null)}
         </div>
-      
     </ThemeProvider>
   );
 }
