@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Grid from '@mui/material/Grid2';
 import { useDispatch, useSelector } from 'react-redux';
 import { loginStudent } from '../../redux/slices/loginSlice';
+import { sendResetEmail } from '../../redux/slices/forgetPasswordSlice';
 import { useRouter } from 'next/navigation';
 import Cookies from "js-cookie";
 
@@ -24,6 +25,21 @@ const { isLoggedIn, loading, error } = useSelector((state) => state.login); // �
       ...prevState,
       [name]: value,
     }));
+  };
+  const handleForgotPassword = () => {
+    if (!formData.email) {
+      alert('يرجى إدخال البريد الإلكتروني.');
+      return;
+    }
+
+    dispatch(sendResetEmail(formData.email)).then((action) => {
+      if (action.type === 'auth/sendResetEmail/fulfilled') {
+        alert('تم إرسال رسالة إلى بريدك الإلكتروني. يرجى التحقق.');
+        
+      } else {
+        alert('حدث خطأ أثناء إرسال البريد الإلكتروني.');
+      }
+    });
   };
 
   const handleSubmit = (e) => {
@@ -99,13 +115,13 @@ const { isLoggedIn, loading, error } = useSelector((state) => state.login); // �
             <Grid container spacing={4} justifyContent='center'>
               <Grid item size={{ xs: 6 }}>
 
-                <Button href="#" variant="text">
+                <Button variant="text" onClick={handleForgotPassword}>
                   هل نسيت كلمة المرور؟
                 </Button>
 
               </Grid>
               <Grid item size={{ xs: 6 }}>
-                <Link href="/Register">
+                <Link href="/Register" color="inherited">
                   <Button href="#" variant="text">
                     لا تمتلك حساب؟ تسجيل
                   </Button>

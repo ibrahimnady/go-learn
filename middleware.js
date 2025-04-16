@@ -4,8 +4,8 @@ export function middleware(request) {
     const url = request.nextUrl.clone();
     const isLoggedIn = request.cookies.get("isLoggedIn"); // قراءة حالة تسجيل الدخول من الكوكيز
 
-    const allowedPagesForGuests = ["/","/Intro", "/Register", "/Login"];
-    const restrictedPagesForLoggedIn = ["/","/Intro", "/Register", "/Login"];
+    const allowedPagesForGuests = ["/", "/Intro", "/Register", "/Login", "/rest-password"];
+    const restrictedPagesForLoggedIn = ["/", "/Intro", "/Register", "/Login","/rest-password"];
     const currentPath = url.pathname;
 
 

@@ -22,6 +22,7 @@ export const loginStudent = createAsyncThunk(
             // حفظ التوكن في cookies
             Cookies.set('student_token', response.data.token, { expires: 7 }); // 7 أيام
             Cookies.set('student_info', JSON.stringify(response.data.data), { expires: 7 });
+            
 
             return response.data;
         } catch (err) {
